@@ -1,4 +1,4 @@
-# 🌐 Website Link Checker
+# 🌐 API Checker
 
 A Python script to scan a website and check for broken or invalid links.
 
@@ -31,7 +31,7 @@ The goal of this project is to create a Python script that scans a given website
 
 2. Install the required dependencies:
 
-```bash
+   ```bash
    pip install -r requirements.txt
 
 3. Run the script:
