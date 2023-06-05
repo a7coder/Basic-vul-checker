@@ -1,4 +1,9 @@
-# <img src="https://github.com/a7coder/API-CHECKER/blob/main/logo.png" width="100" height="100">API Checker
+<img src="https://github.com/a7coder/API-CHECKER/blob/main/logo.png" width="100" height="100" 
+style='margin-left: auto;
+  margin-right: auto;'
+>
+
+#API Checker
 
 A Python script to scan a website and check for broken or invalid links.
 
