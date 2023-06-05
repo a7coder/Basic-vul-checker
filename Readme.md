@@ -1,4 +1,4 @@
-# ![Logo](https://github.com/a7coder/API-CHECKER/blob/main/logo.png) API Checker
+# ![Logo](https://github.com/a7coder/API-CHECKER/blob/main/logo.png=100*100) API Checker
 
 A Python script to scan a website and check for broken or invalid links.
 
@@ -37,5 +37,5 @@ The goal of this project is to create a Python script that scans a given website
 3. Run the script:
 
    ```bash
-    python link_checker.py
+    python script.py
 
