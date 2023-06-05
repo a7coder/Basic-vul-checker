@@ -1,5 +1,6 @@
-<img src="https://github.com/a7coder/API-CHECKER/blob/main/logo.png" width="100" height="100" style="margin-left: auto;margin-right: auto;"
->
+<p align="center">
+<img src="https://github.com/a7coder/API-CHECKER/blob/main/logo.png" width="100" height="100" >
+</p>
 
 #API Checker
 
