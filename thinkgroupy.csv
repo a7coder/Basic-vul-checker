@@ -1,0 +1,11 @@
+Website URL,Total Links,Valid Links,Broken Links
+https://www.thinkgroupy.com/,15,15,0
+
+Open Ports
+(80, 'http')
+(443, 'https')
+
+Security Headers Present
+Content-Security-Policy
+X-Frame-Options
+

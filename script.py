@@ -4,34 +4,92 @@ from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 import concurrent
 import csv
-import nmap
+import socket
+import ssl
 
-def check_open_ports(url:str):
+def check_url(url:str):
+    li=['mailto:','javascript:','instagram','youtube','calendly','facebook','twitter','reddit','#','snapchat','linkedin','telegram','whatsapp','moj','sharechat']
+    
+    for text in li:
+        if text in url:
+            return False
+    return True
+
+def check_port(port, url):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(1)  # Set the timeout to 1 second
+    result = sock.connect_ex((url, port))
+    if result == 0:
+        service_name = socket.getservbyport(port)
+        return (port, service_name)
+    sock.close()
+
+
+def check_open_ports(url: str):
     print("************************ Scanning The Open Ports in the Website, Please Wait *********************")
     print()
     open_ports = []
+
     
-    # Remove "http://" or "https://" from the URL
     if url.startswith("http://"):
         url = url[len("http://"):]
     elif url.startswith("https://"):
         url = url[len("https://"):]
+
     if url.endswith('/'):
-        url=url[:-1]
-    # Create Nmap PortScanner object
-    nm = nmap.PortScanner()
+        url = url[:-1]
 
-    # Perform the port scan on the URL
-    nm.scan(url, arguments='-p 1-65535')  # Scan all ports (1-65535)
+    
+    with ThreadPoolExecutor(max_workers=50) as executor:
+        
+        tasks = [executor.submit(check_port, port, url)
+                 for port in range(1, 65535)]
 
-    # Iterate over the scanned hosts
-    for host in nm.all_hosts():
-       
-        for port in nm[host]['tcp']:
-            if nm[host]['tcp'][port]['state'] == 'open':
-                open_ports.append(port)
+      
+        for future in concurrent.futures.as_completed(tasks):
+            result = future.result()
+            if result:
+                open_ports.append(result)
 
     return open_ports
+
+
+def check_ssl_upgrade(url: str,open_port_list:list):
+
+    if (443, 'https') in open_port_list:
+        print("************************ Checking the TLS Certificate, Please Wait *********************")
+        print()
+
+        if url.startswith("http://"):
+            url = url[len("http://"):]
+        elif url.startswith("https://"):
+            url = url[len("https://"):]
+
+        if url.endswith('/'):
+            url = url[:-1]
+
+        context =  context = ssl.create_default_context()
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        
+        sslSocket = context.wrap_socket(s, server_hostname = url)
+        sslSocket.connect((url, 443))
+        tls_version=sslSocket.version()
+    
+        
+        sslSocket.close()
+        if 'TLSv1.3' == tls_version:
+            print("************************ No Need to Upgrade TLS Certificate *********************")
+            
+        else:
+            print("************************ Please Upgrade TLS Certificate *********************")
+            print()
+    else:
+        print("************************ Port 443 is not Open *********************")
+
+    print()
+    print(f'************************ Your Current TLS Version is {tls_version} *********************')
+        
+
 
 def check_security_headers(url):
     print("************************ Scanning The Security Headers in the Website, Please Wait *********************")
@@ -66,7 +124,7 @@ def get_all_links(url):
 
     for anchor in soup.find_all('a'):
         href = anchor.get('href')
-        if href and not (href.startswith('mailto:') or href.startswith('javascript:')):
+        if href and check_url(urljoin(url, href)):
             absolute_url = urljoin(url, href)
             links.add(absolute_url)
 
@@ -103,8 +161,9 @@ def scan_website(url, max_depth=None, current_depth=0, start_url='Home'):
 
         print("************************ Scanning The Website, Please Wait *********************")
         print()
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            futures = {executor.submit(check_link_status, link): link for link in all_links}
+        with ThreadPoolExecutor(max_workers=50) as executor:
+            futures = {executor.submit(
+                check_link_status, link): link for link in all_links}
 
             for future in concurrent.futures.as_completed(futures):
                 link = futures[future]
@@ -136,8 +195,9 @@ def scan_website(url, max_depth=None, current_depth=0, start_url='Home'):
         print("Something went wrong")
 
 
-def save_results(url, total_links, valid_links, broken_links,open_ports_list,security_headers_list, save_file):
+def save_results(url, total_links, valid_links, broken_links, open_ports_list, security_headers_list, save_file):
     try:
+        print()
         print("********************* Saving The File *********************")
         print()
         with open(save_file+'.csv', 'w', newline='') as file:
@@ -149,19 +209,19 @@ def save_results(url, total_links, valid_links, broken_links,open_ports_list,sec
 
             file.write("Open Ports")
             writer.writerow([])  # Empty row
-            
+
             for port in open_ports_list:
                 file.write(str(port)+'\n')
 
             writer.writerow([])  # Empty row
-            
+
             file.write("Security Headers Present")
             writer.writerow([])  # Empty row
-           
+
             for header in security_headers_list:
                 file.write(str(header)+'\n')
-            
-            writer.writerow([])  # Empty row            
+
+            writer.writerow([])  # Empty row
             if broken_links:
                 writer.writerow(["Broken Link", 'Found At'])
 
@@ -185,7 +245,8 @@ def main():
             "Enter the file name to save results (leave blank for no saving): ")
         print()
 
-        all_links, valid_links, broken_links = scan_website(url, max_depth, 0, url)
+        all_links, valid_links, broken_links = scan_website(
+            url, max_depth, 0, url)
         open_ports_list = check_open_ports(url)
         security_headers_list = check_security_headers(url)
 
@@ -200,6 +261,8 @@ def main():
         print('Security Headers Present in the website are: ',
               security_headers_list)
         print()
+        
+        check_ssl_upgrade(url,open_ports_list)          
 
         if broken_links:
             print('********************** List of Broken Links **********************')
@@ -209,11 +272,14 @@ def main():
 
         if save_file:
             save_results(url, len(all_links), valid_links,
-                         broken_links,open_ports_list,security_headers_list, save_file)
-     
+                         broken_links, open_ports_list, security_headers_list, save_file)
+            
+        
+
         print("********************** Script Completed **********************")
-    except:
-        print("Something went wrong")
+        print()
+    except Exception as e:
+        print("Something went wrong ",e)
 
 
 if __name__ == "__main__":
