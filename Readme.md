@@ -10,7 +10,7 @@ A Python script to scan a website and check for broken or invalid links.
 
 The goal of this project is to create a Python script that scans a given website and checks for broken or invalid links. The script will crawl through the web pages of the website, extract all the links, and then check the status of each link to determine if it is valid or broken.
 
-## Note -> Please allow approximately 10 minutes for the scanning of available ports on the website. Your patience is appreciated.
+## Note -> Please allow approximately 30 minutes for the scanning of available ports on the website. Your patience is appreciated.
 
 ## Features
 
