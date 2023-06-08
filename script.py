@@ -7,13 +7,23 @@ import csv
 import socket
 import ssl
 
-def check_url(url:str):
-    li=['mailto:','javascript:','instagram','youtube','calendly','facebook','twitter','reddit','#','snapchat','linkedin','telegram','whatsapp','moj','sharechat']
+from collections import deque
+
+
+def get_domain(url):
+    Domain_name = ''
+    x = url.split("/")
     
-    for text in li:
-        if text in url:
-            return False
-    return True
+    if(x[0] == "https:" or x[0] == "http:"):
+        x = x[2].split(".")
+    else:
+        x = x[0].split(".")
+    if(len(x) == 2):
+        Domain_name = x[0]
+    else:
+        Domain_name = x[1]
+    return Domain_name
+
 
 def check_port(port, url):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -82,7 +92,7 @@ def check_ssl_upgrade(url: str,open_port_list:list):
             
         else:
             print("************************ Please Upgrade TLS Certificate *********************")
-            print()
+           
     else:
         print("************************ Port 443 is not Open *********************")
 
@@ -114,24 +124,80 @@ def check_security_headers(url):
 
     return present_headers
 
-
+parent_dict = {}
 def get_all_links(url):
+    
     print("********************* Getting All The Links From the Site *********************")
     print()
-    response = requests.get(url)
+
+    actual_domain=get_domain(url)
+    all_links = set()
+    queue_links=deque([])
+
+    queue_links.append(url)
+    all_links.add(url)
+
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
+    response = requests.get(url, headers=headers)
+
     soup = BeautifulSoup(response.text, 'html.parser')
-    links = set()
 
     for anchor in soup.find_all('a'):
+
         href = anchor.get('href')
-        if href and check_url(urljoin(url, href)):
-            absolute_url = urljoin(url, href)
-            links.add(absolute_url)
+
+        if href and not (href.startswith("mailto:") or href.startswith("javascript:") or href.startswith('tel') or href.startswith('#')):
+
+            absolute_url = href
+
+            if not (absolute_url.startswith("http") or absolute_url.startswith("https")) :
+
+                absolute_url =urljoin(url, href)
+                    
+
+            if  absolute_url not in all_links:
+
+                if url not in parent_dict:
+                    parent_dict[url] = set()
+
+                parent_dict[url].add(absolute_url)
+
+                all_links.add(absolute_url)
+                queue_links.append(absolute_url)
+
+    while queue_links:
+
+        url= queue_links.popleft()
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        for anchor in soup.find_all('a'):
+
+            href = anchor.get('href')
+
+            if href and not (href.startswith("mailto:") or href.startswith("javascript:") or href.startswith('tel') or href.startswith('#')):
+
+                absolute_url = href
+
+                if not (absolute_url.startswith("http") or absolute_url.startswith("https")) :
+
+                    absolute_url =urljoin(url, href)
+                    
+
+                if  get_domain(absolute_url)== actual_domain and absolute_url not in all_links:
+
+                    if url not in parent_dict:
+                        parent_dict[url] = set()
+
+                    parent_dict[url].add(absolute_url)
+                    all_links.add(absolute_url)
+                    queue_links.append(absolute_url)
+        
 
     print("********************** All Links Are Fetched **********************")
-    print()
-    return links
-
+    print(all_links)
+    return all_links
+   
 
 def check_link_status(link):
     try:
@@ -141,41 +207,24 @@ def check_link_status(link):
         return None
 
 
-broken_links = []
-visited = {}
-parent_dict = {}
 
-
-def scan_website(url, max_depth=None, current_depth=0, start_url='Home'):
-    try:
-        if max_depth is not None and current_depth > max_depth:
-            return set(), 0, []
+def scan_website(url):
+    try:    
 
         all_links = get_all_links(url)
+        broken_links = []
         valid_links = 0
 
-        if url not in parent_dict:
-            parent_dict[url] = set()
-
-        parent_dict[url].add(start_url)
 
         print("************************ Scanning The Website, Please Wait *********************")
         print()
         with ThreadPoolExecutor(max_workers=50) as executor:
-            futures = {executor.submit(
-                check_link_status, link): link for link in all_links}
+
+            futures = {executor.submit(check_link_status, link): link for link in all_links}
 
             for future in concurrent.futures.as_completed(futures):
                 link = futures[future]
                 status_code = future.result()
-
-                if link not in parent_dict:
-                    parent_dict[link] = set()
-
-                parent_dict[link].add(start_url)
-
-                if link not in visited:
-                    visited[link] = 1
 
                 if status_code is not None:
                     valid_links += 1
@@ -183,14 +232,9 @@ def scan_website(url, max_depth=None, current_depth=0, start_url='Home'):
                 else:
                     broken_links.append(link)
 
-        next_depth = current_depth + 1
-        for link in all_links:
-
-            if link not in visited:
-
-                scan_website(link, max_depth, next_depth, url)
-
+        
         return all_links, valid_links, broken_links
+    
     except:
         print("Something went wrong")
 
@@ -239,14 +283,31 @@ def main():
         print()
         url = input("Enter the website URL: ")
         print()
-        max_depth = int(input("Enter the maximum depth: "))
-        print()
+  
         save_file = input(
             "Enter the file name to save results (leave blank for no saving): ")
         print()
 
-        all_links, valid_links, broken_links = scan_website(
-            url, max_depth, 0, url)
+        if not url.startswith('http://') and not url.startswith('https://'):
+            url = 'http://' + url
+
+        https_url = url.replace('http://', 'https://', 1)
+
+        if requests.head(https_url).status_code == 200:
+                
+                url = https_url
+
+        elif 'www' not in https_url:
+                    
+            https_url =https_url.replace('://', '://www.', 1)
+
+            if requests.head(https_url).status_code == 200:
+                
+                    url = https_url
+
+        print ('Checking the URL .... ', url)
+        print()
+        all_links, valid_links, broken_links = scan_website(url)
         open_ports_list = check_open_ports(url)
         security_headers_list = check_security_headers(url)
 
@@ -276,6 +337,7 @@ def main():
             
         
 
+        print()
         print("********************** Script Completed **********************")
         print()
     except Exception as e:
