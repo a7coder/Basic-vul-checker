@@ -7,6 +7,7 @@ import concurrent
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
+from .cipher import weak_cipher_suites
 start_time = time.time()
 
 def main(url, resp=[]):
@@ -18,7 +19,6 @@ def main(url, resp=[]):
             crawler(url, host_domain_name,resp)
             check_security_headers(url, resp)
             check_open_ports(url, resp)
-            check_ssl(url, resp)
     except:
         resp.append({"severity":"Critical","target_url": url,"title":"Website Down", "method":"GET", "vulnerable_url": url, "description": f"Host URL {url} is down"})
     elapsed_time = time.time() - start_time
@@ -99,6 +99,7 @@ def check_open_port(host, port, resp):
             if port != 80 and port != 443:
                 return (port, service)
             elif port == 443:
+                resp.append({'severity':'Info','target_url':host,'vulnerable_url':host,'title':'Open Ports','method':'GET','description':'Port 443 is open and service running on it is : HTTPS'})
                 check_ssl(host, resp)
             elif port == 80:
                 resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'Open Ports','method':'GET','description':'Port 80 is open and service running on it is : HTTP'})
@@ -128,7 +129,6 @@ def check_ssl(host, resp):
         days_to_expiry = (expiry_date - current_date).days
         ssl_version = ssl_sock.version()
         cipher_suite = ssl_sock.cipher()
-        issuer = cert['issuer']
         
         if days_to_expiry < 30:
             resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Certificate is going to expire in {} days.'.format(days_to_expiry)})
@@ -137,23 +137,21 @@ def check_ssl(host, resp):
         else:
             resp.append({'severity':'Info','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Certificate is going to expire in {} days.'.format(days_to_expiry)})
         
-        if ssl_version.startswith(('TLSv1.2')) and not ssl_version.endswith(('1.3')):
+        if ssl_version.startswith(('TLSv1.3')):
+            pass
+        elif ssl_version.startswith(('TLSv1.2')):
             resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS version is outdated & current version is {}'.format(ssl_version)})
         else:
             resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS version is outdated & current version is {}'.format(ssl_version)})
-        
-        # Check for weak cipher suite and vulnerable to BEAST attack and POODLE attack and CRIME attack and BREACH attack and FREAK attack and LOGJAM attack and DROWN attack and SWEET32 attack and RC4 attack and Heartbleed attack
 
-        print('SSL Certificate Expiry:', expiry_date)
-        print('Days to Expiry:', days_to_expiry)
-        print('SSL/TLS Version:', ssl_version)
-        print('Cipher Suite:', cipher_suite)
-        print('SSL Certificate Issuer:', issuer)
-        print()
+        if cipher_suite in weak_cipher_suites:
+            resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS is using weak cipher suite: {} & may be vulnerable.'.format(cipher_suite)})
+        else:
+            resp.append({'severity':'Info','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS is using strong cipher suite: {} & is not vulnerable.'.format(cipher_suite)})
     except ssl.SSLError as e:
-        resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Error: {}'.format(str(e))})
+        resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Error: {}'.format(str(e))})
     except socket.error as e:
-        resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'Socket Error: {}'.format(str(e))})
+        resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'Socket Error: {}'.format(str(e))})
     finally:
         ssl_sock.close()
         sock.close()
