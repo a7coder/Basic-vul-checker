@@ -7,7 +7,7 @@ import concurrent
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
-from .cipher import weak_cipher_suites
+from cipher import weak_cipher_suites
 start_time = time.time()
 
 def main(url, resp=[]):
@@ -16,7 +16,7 @@ def main(url, resp=[]):
         res = requests.get(url, timeout=5)
         if res.status_code == 200:
             host_domain_name = get_host__domain(url)
-            crawler(url, host_domain_name,resp)
+            broken_links(url, host_domain_name,resp)
             check_security_headers(url, resp)
             check_open_ports(url, resp)
     except:
@@ -39,9 +39,8 @@ def get_host__domain(url):
         Domain_name = x[1]
     return Domain_name
 
-def crawler(url, host_domain_name,resp):
+def broken_links(url, host_domain_name,resp):
     crawled_urls = set()
-    invalid_urls = []
     queue = []
     queue.append(url)
     while queue:
@@ -58,7 +57,7 @@ def crawler(url, host_domain_name,resp):
         for anchor in soup.find_all("a"):
             try:
                 link = anchor.attrs["href"]
-            except KeyError:
+            except:
                 continue
             if link and not (link.startswith("mailto:") or link.startswith("javascript:") or link.startswith('tel') or link.startswith('#')):
                 if link.startswith("/"):
@@ -69,7 +68,7 @@ def crawler(url, host_domain_name,resp):
                 link_domain = get_host__domain(link)
                 if not link in queue and not link in crawled_urls and link_domain == host_domain_name:
                     queue.append(link)
-    return invalid_urls
+    return 0
 
 def check_security_headers(url, resp):
     response = requests.get(url)
@@ -156,4 +155,4 @@ def check_ssl(host, resp):
         ssl_sock.close()
         sock.close()
 
-main("https://app.thinkgroupy.com")
+main("http://www.deadlinkcity.com/")
