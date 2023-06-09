@@ -108,7 +108,7 @@ def check_open_ports(url, resp):
     parsed_url = urlparse(url)
     host = parsed_url.netloc
     ip = socket.gethostbyname(host)
-    with ThreadPoolExecutor(max_workers=50) as executor:
+    with ThreadPoolExecutor(max_workers=500) as executor:
         tasks = [executor.submit(check_open_port, host, port, resp)
                  for port in range(1, 65535)]
         for future in concurrent.futures.as_completed(tasks):
@@ -132,21 +132,17 @@ def check_ssl(host, resp):
         if days_to_expiry < 30:
             resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Certificate is going to expire in {} days.'.format(days_to_expiry)})
         elif days_to_expiry < 90:
-            resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Certificate is going to expire in {} days.'.format(days_to_expiry)})
+            resp.append({'severity':'Low','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Certificate is going to expire in {} days.'.format(days_to_expiry)})
         else:
             resp.append({'severity':'Info','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Certificate is going to expire in {} days.'.format(days_to_expiry)})
         
-        if ssl_version.startswith(('TLSv1.3')):
+        if ssl_version.startswith(('TLSv1.3')) or ssl_version.startswith(('TLSv1.2')):
             pass
-        elif ssl_version.startswith(('TLSv1.2')):
-            resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS version is outdated & current version is {}'.format(ssl_version)})
         else:
             resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS version is outdated & current version is {}'.format(ssl_version)})
 
         if cipher_suite in weak_cipher_suites:
             resp.append({'severity':'High','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS is using weak cipher suite: {} & may be vulnerable.'.format(cipher_suite)})
-        else:
-            resp.append({'severity':'Info','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL/TLS is using strong cipher suite: {} & is not vulnerable.'.format(cipher_suite)})
     except ssl.SSLError as e:
         resp.append({'severity':'Medium','target_url':host,'vulnerable_url':host,'title':'SSL/TLS','method':'GET','description':'SSL Error: {}'.format(str(e))})
     except socket.error as e:
