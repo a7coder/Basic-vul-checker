@@ -8,15 +8,109 @@ from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 from cipher import weak_cipher_suites
+from collections import deque
+
 start_time = time.time()
+
+
+parent_dict = {}
+def get_all_links(url):
+   
+    actual_domain=get_host__domain(url)
+    all_links = set()
+    queue_links=deque([])
+    visited=set()
+
+    all_links.add(url)
+    queue_links.append(url)
+    
+    while queue_links:
+
+        url= queue_links.popleft()
+        
+        if url.endswith('/'):
+            url=url[:-1]
+        if url not in visited and get_host__domain(url) == actual_domain:
+            
+            response = requests.get(url)
+            if not response.status_code == 200:
+                all_links.add(url)
+                visited.add(url)
+                continue
+                
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            for anchor in soup.find_all('a'):
+
+                href = anchor.get('href')
+
+                if href and not (href.startswith("mailto:") or href.startswith("javascript:") or href.startswith('tel') or href.startswith('/#') or href.startswith('#')):
+
+                    absolute_url = href
+
+                    if not (absolute_url.startswith("http") or absolute_url.startswith("https")) :
+
+                        absolute_url =urljoin(url, href)                 
+                     
+                    if absolute_url.endswith('/'):
+                        absolute_url=absolute_url[:-1]
+                    
+
+                    if absolute_url not in parent_dict:
+                        parent_dict[absolute_url] = set()
+
+                    parent_dict[absolute_url].add(url)
+                    all_links.add(absolute_url)
+                    
+                    queue_links.append(absolute_url)
+
+        visited.add(url)
+    return all_links
+
+def check_link_status(link,resp):
+    try:
+        response = requests.get(link,timeout=2)
+        if response.status_code !=200:
+            resp.append({"severity":"Info","target_url": parent_dict[link],"title":"Broken Links", "method":"GET", "vulnerable_url": link, "description": "Invalid URL with status code {}".format(response.status_code)})
+            return False 
+        return True
+    except :
+        resp.append({"severity":"Info","target_url": parent_dict[link],"title":"Broken Links", "method":"GET", "vulnerable_url": link, "description": "Invalid URL"})
+        return False
+    
+def scan_website(url,resp):
+    try:    
+        
+        all_links = get_all_links(url)
+        broken_links = []
+        valid_links = 0
+
+        with ThreadPoolExecutor(max_workers=50) as executor:
+
+            futures = {executor.submit(check_link_status, link,resp): link for link in all_links}
+
+            for future in concurrent.futures.as_completed(futures):
+                link = futures[future]
+                status_code = future.result()
+
+                if status_code:
+                    valid_links += 1
+
+                else:
+                    broken_links.append(link)
+
+        return all_links, valid_links, broken_links
+    
+    except:
+        print("Something went wrong")
+
 
 def main(url, resp=[]):
     check_ssl(url, resp)
     try:
         res = requests.get(url, timeout=5)
         if res.status_code == 200:
-            host_domain_name = get_host__domain(url)
-            broken_links(url, host_domain_name,resp)
+            scan_website(url,resp)
             check_security_headers(url, resp)
             check_open_ports(url, resp)
     except:
@@ -39,36 +133,6 @@ def get_host__domain(url):
         Domain_name = x[1]
     return Domain_name
 
-def broken_links(url, host_domain_name,resp):
-    crawled_urls = set()
-    queue = []
-    queue.append(url)
-    while queue:
-        link = queue.pop()
-        try:
-            response = requests.get(link, timeout=5)
-            if not response.status_code == 200:
-                resp.append({"severity":"Info","target_url": url,"title":"Broken Links", "method":"GET", "vulnerable_url": link, "description": "Invalid URL with status code {}".format(response.status_code)})
-            crawled_urls.add(link)
-        except:
-            resp.append({"severity":"Info","target_url": url,"title":"Broken Links", "method":"GET", "vulnerable_url": link, "description": "Invalid URL"})
-            continue
-        soup = BeautifulSoup(response.text, 'html.parser')
-        for anchor in soup.find_all("a"):
-            try:
-                link = anchor.attrs["href"]
-            except:
-                continue
-            if link and not (link.startswith("mailto:") or link.startswith("javascript:") or link.startswith('tel') or link.startswith('#')):
-                if link.startswith("/"):
-                    base_url = urlparse(url).scheme + "://" + urlparse(url).netloc
-                    link = base_url + link
-                elif not link.startswith("http"):
-                    link = urljoin(url, link)
-                link_domain = get_host__domain(link)
-                if not link in queue and not link in crawled_urls and link_domain == host_domain_name:
-                    queue.append(link)
-    return 0
 
 def check_security_headers(url, resp):
     response = requests.get(url)
