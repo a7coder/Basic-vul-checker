@@ -215,4 +215,5 @@ def check_ssl(host, resp):
         ssl_sock.close()
         sock.close()
 
-main("http://www.deadlinkcity.com/")
+if __name__ == "__main__":
+    main("http://www.deadlinkcity.com/")
