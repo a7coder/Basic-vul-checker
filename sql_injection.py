@@ -1,4 +1,4 @@
-from random import randint
+# from random import randint
 import requests
 import concurrent
 from concurrent.futures import ThreadPoolExecutor
@@ -6,10 +6,61 @@ from urllib.parse import urlparse, urljoin,parse_qs,urlencode
 from bs4 import BeautifulSoup
 from scan import get_all_links
 
+def send(resp, data):
+    parent_url,form_url = resp['parent_url'],resp['action']
+    visited=set()
+    visited.add(form_url)
+    visited.add(parent_url)
+
+
+    if resp['method'] == 'post':
+
+
+        response = requests.post(form_url, data=data, allow_redirects=False)
+ 
+        while response.status_code == 302:
+            
+            # Extract the redirect URL from the response headers
+            redirect_url = response.headers['Location']
+            if not (redirect_url.startswith("http") or redirect_url.startswith("https")):
+                            redirect_url = urljoin(parent_url, redirect_url)
+            
+            # print('While Loop ',response.headers['Location'],' ',redirect_url)
+            if redirect_url in visited:
+                # print('PResent')
+                response.status_code=404
+                return response
+            
+            # Make a new POST request to the redirect URL
+            response = requests.post(redirect_url, data=data, allow_redirects=False)
+            visited.add(redirect_url)
+
+    else:
+        response = requests.get(form_url, data=data, allow_redirects=False)
+        while response.status_code == 302:
+            # Extract the redirect URL from the response headers
+            redirect_url = response.headers['Location']
+            if not (redirect_url.startswith("http") or redirect_url.startswith("https")):
+                            redirect_url = urljoin(parent_url, redirect_url)
+            
+            # print('While Loop ',response.headers['Location'],' ',redirect_url)
+            if redirect_url in visited:
+                # print('PResent')
+                response.status_code=404
+                return response
+            
+            # Make a new POST request to the redirect URL
+            response = requests.get(redirect_url, data=data, allow_redirects=False)
+            visited.add(redirect_url)
+
+    # print('Response is ',response,data)
+    # Return the final response
+    # print(response.text)
+    return response
 
 def generate_payload():
     ans=''
-    with open('scripts/payloads.txt','r') as f:
+    with open('./payloads.txt','r') as f:
         ans=f.read()
     res=ans.split('\n')
     return res
@@ -23,7 +74,7 @@ def check_payload(resp):
 
 def run_link_attack(url):
     try:
-        print('Link Attack ****************',url)
+        # print('Link Attack ****************',url)
         payloads=generate_payload()
         query=urlparse(url).query
 
@@ -50,8 +101,8 @@ def run_link_attack(url):
 
 
 def run_form_attack(resp):
-    print('Form Attack ****************',resp)
     payloads=generate_payload()
+    # print('Response is ',resp)
     for payload in payloads:
 
         keys = {}
@@ -61,15 +112,14 @@ def run_form_attack(resp):
 
         # print('Payloads are ******************')
         if 'submit' in resp:
-            keys[resp['submit']]=resp['submit']
-        if resp['method'] == 'post':
-            # print('Post*********')
-            req = requests.post(resp['action'], data=keys)
-        
-        else:
-          
-            req = requests.get(resp['action'], params=keys)
-    
+            keys[resp['submit'][0]]=resp['submit'][1]
+
+        # print('Form Attack ****************',keys)
+
+        req=send(resp,keys)
+
+        # print('Response Text is ')
+        # print(req.text)
         if check_payload(req):
             # print('Content ********************* are ',req.text)
             # print('Payload is ',payload)
@@ -107,11 +157,11 @@ def run_sql(url):
 
             for key in form.find_all(["input", "textarea"]):
                 try:
-                    if key.name == 'input'  and key['type']=='submit' and key.has_attr('name'):
+                    if  key.has_attr('name') and key.name == 'input'  and key['type']=='submit' :
                         
-                        resp['submit']=key['name']
+                        resp['submit']=(key['name'],key['value'])
 
-                    elif (key.name == 'textarea') or (key.name == 'input' and key.has_attr('name')):
+                    elif key.has_attr('name') and ((key.name == 'textarea') or (key.name == 'input')):
                         
                         if 'field' not in resp:
                             resp['field'] = set()
@@ -120,18 +170,20 @@ def run_sql(url):
                     
 
                 except Exception as e:
-                    print('Excepiton',e,key)
-                    print(key.has_attr('name'))
+                    # print('Excepiton',e,key)
+                    # print(key.has_attr('name'))
                     continue
 
             try:
+                resp['parent_url']=url
                 # print('******Respponse is ',resp)
                 ans =run_form_attack(resp)
                 # print('Ans is ',ans)
                 if ans[0]:
 
                     result.append({'severity':'High','target_url':url,'vulnerable_url':resp['action'],'title':'SQL-INJECTION','method':resp['method'].upper(),'description':f"SQL-INJECTION vulnerability found at vulnerable url with payload {ans[1]}"})
-            except:
+            except Exception as e:
+                # print('Enter exception ' ,e)
                 continue
         
         return result
@@ -168,9 +220,9 @@ def sql_injection(url):
 
     
             return resp
-    except :
-        return f'Website is Down'
+    except Exception as e:
+        return f'Website is Down {e}'
 
 if __name__ == '__main__':
 
-    print(sql_injection('http://testphp.vulnweb.com/login.php'))
+    print(sql_injection('http://testphp.vulnweb.com'))
