@@ -67,14 +67,10 @@ def run_xss(url):
             for key in form.find_all(["input", "textarea"]):
                 try:
                     if key.has_attr('name') and key.name == 'input'  and key['type']=='submit':
-                        
                         resp['submit']=(key['name'],key['value'])
-
                     elif key.has_attr('name') and ((key.name == 'textarea') or (key.name == 'input')):
-                        
                         if 'field' not in resp:
                             resp['field'] = set()
-
                         resp['field'].add(key['name'])
                 except Exception as e:
                     print('Exception ',e)
