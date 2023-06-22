@@ -48,7 +48,7 @@ def run_form_attack(resp):
 def run_xss(url):
     try:
         res = requests.get(url,timeout=5)
-        bsObj = BeautifulSoup(res.content, "html.parser")
+        bsObj = BeautifulSoup(res.content, "html.parser",from_encoding="iso-8859-1")
         forms = bsObj.find_all("form", method=True)        
         result=[]
         for form in forms:            

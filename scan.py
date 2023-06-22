@@ -37,7 +37,7 @@ def get_all_links(url):
                 all_links.add(url)
                 visited.add(url)
                 continue
-            soup = BeautifulSoup(response.text, 'html.parser')
+            soup = BeautifulSoup(response.text, 'html.parser',from_encoding="iso-8859-1")
             for anchor in soup.find_all('a'):
                 href = anchor.get('href')
                 if href and not (href.startswith("mailto:") or href.startswith("javascript:") or href.startswith('tel') or href.startswith('/#') or href.startswith('#')):
