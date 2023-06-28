@@ -1,0 +1,2 @@
+<xss autofocus tabindex=1 onfocus=alert(1)></xss>
+<xss autofocus tabindex=1 onfocusin=alert(1)></xss>

