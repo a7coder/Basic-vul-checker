@@ -6,7 +6,7 @@ from urllib.parse import urlparse, urljoin,parse_qs,urlencode
 from bs4 import BeautifulSoup
 from scan import get_all_links
 import os
-
+import time
 def generate_script():
     FUNCTION = [
         "prompt(5000/200)",
@@ -63,7 +63,7 @@ def run_link_attack(url,full_scan):
         payloads = generate_payload()
         query = urlparse(url).query
         if query != "":
-            with concurrent.futures.ThreadPoolExecutor(max_workers=200) as executor:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
                 futures = []
                 for payload in payloads:
                     query_payload = query.replace(
@@ -91,7 +91,7 @@ def run_form_attack(resp,full_scan):
     if full_scan ==False:
         return run_Quick_form_attack(resp)
     payloads = generate_payload()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=200) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
         futures = []
         for payload in payloads:
             keys = {}
@@ -161,7 +161,10 @@ def xss(url,full_scan):
         resp=[]
         if res.status_code == 200:
             all_links=get_all_links(url)
-            with ThreadPoolExecutor(max_workers=50) as executor:
+            set_max_worker = 50
+            if  full_scan:
+                set_max_worker=12
+            with ThreadPoolExecutor(max_workers=set_max_worker) as executor:
                 futures = [executor.submit(run_both_attack, link,full_scan) for link in all_links]            
                 for future in concurrent.futures.as_completed(futures):                    
                     ans = future.result()
@@ -174,7 +177,9 @@ def xss(url,full_scan):
         return f'Website is Down {e}'
 
 if __name__ == '__main__':
+    t=time.time()
     a=xss('http://testphp.vulnweb.com',True)
     print('Ans is ',)
     print(a)
     print('Length ',len(a))
+    print('Time is ', time.time()-t)
