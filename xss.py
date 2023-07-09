@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from scan import get_all_links
 import os
 import time
+
 def generate_script():
     FUNCTION = [
         "prompt(5000/200)",
@@ -56,64 +57,49 @@ def generate_payload():
         li.append(res[randint(0, len(res)-1)])
     return li
 
-def run_link_attack(url,full_scan):
+def run_link_attack(url, full_scan, payloads):
     try:
-        if full_scan== False:
+        if full_scan == False:
             return run_Quick_link_attack(url)
-        payloads = generate_payload()
         query = urlparse(url).query
         if query != "":
-            with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-                futures = []
-                for payload in payloads:
-                    query_payload = query.replace(
-                        query[query.find("=") + 1:len(query)], payload, 1)
-                    test = url.replace(query, query_payload, 1)
-                    query_all = url.replace(query, urlencode(
-                        {x: payload for x in parse_qs(query)}))
-                    futures.append(executor.submit(requests.get, test, timeout=10))
-                    futures.append(executor.submit(requests.get, query_all, timeout=10))
-                for future, payload in zip(concurrent.futures.as_completed(futures), payloads):
-                    try:
-                        _respon = future.result()
-                        if payload in _respon.text:
-                            return {'severity': 'Medium', 'target_url': url, 'vulnerable_url': _respon.url,
-                                    'title': 'XSS', 'method': 'GET',
-                                    'description': f'XSS vulnerability found at vulnerable url with payload {payload}'}
-                    except Exception as e:
-                        continue
-
+            for payload in payloads:
+                query_payload = query.replace(
+                    query[query.find("=") + 1:len(query)], payload, 1)
+                test = url.replace(query, query_payload, 1)
+                query_all = url.replace(query, urlencode({x: payload for x in parse_qs(query)}))
+                response1 = requests.get(test, timeout=10)
+                if payload in response1.text:
+                        return {'severity': 'Medium', 'target_url': url, 'vulnerable_url': response1.url,
+                                'title': 'XSS', 'method': 'GET',
+                                'description': f'XSS vulnerability found at vulnerable url with payload {payload}'}
+                response2 = requests.get(query_all, timeout=10)
+                if payload in response2.text:
+                        return {'severity': 'Medium', 'target_url': url, 'vulnerable_url': response2.url,
+                                'title': 'XSS', 'method': 'GET',
+                                'description': f'XSS vulnerability found at vulnerable url with payload {payload}'}
             return None
     except Exception as e:
         return None
-    
-def run_form_attack(resp,full_scan):
-    if full_scan ==False:
-        return run_Quick_form_attack(resp)
-    payloads = generate_payload()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        futures = []
-        for payload in payloads:
-            keys = {}
-            for item in resp['field']:
-                keys[item] = payload
-            if 'submit' in resp:
-                keys[resp['submit'][0]] = resp['submit'][1]
-            if resp['method'] == 'post':
-                futures.append(executor.submit(requests.post, resp['action'], data=keys, timeout=10))
-            else:
-                futures.append(executor.submit(requests.get, resp['action'], params=keys, timeout=10))
 
-        for future, payload in zip(concurrent.futures.as_completed(futures), payloads):
-            try:
-                req = future.result()
-                if payload in req.text:
-                    return (True, keys)
-            except Exception as e:
-                continue
+def run_form_attack(resp, full_scan, payloads):
+    if full_scan == False:
+        return run_Quick_form_attack(resp)   
+    for payload in payloads:
+        keys = {}
+        for item in resp['field']:
+            keys[item] = payload
+        if 'submit' in resp:
+            keys[resp['submit'][0]] = resp['submit'][1]
+        if resp['method'] == 'post':
+            response = requests.post(resp['action'], data=keys, timeout=10)
+        else:
+            response = requests.get(resp['action'], params=keys, timeout=10)
+        if payload in response.text:
+            return (True, keys)
     return (False, keys)
 
-def run_xss(url,full_scan):
+def run_xss(url,full_scan,payloads):
     try:
         res = requests.get(url,timeout=10)
         bsObj = BeautifulSoup(res.content, "html.parser",from_encoding="iso-8859-1")
@@ -143,7 +129,7 @@ def run_xss(url,full_scan):
                 except Exception as e:
                     continue
             try:
-                ans =run_form_attack(resp,full_scan)
+                ans =run_form_attack(resp,full_scan,payloads)
                 if ans[0]:
                     result.append({'severity':'High','target_url':url,'vulnerable_url':resp['action'],'title':'XSS','method':resp['method'].upper(),'description':f'XSS vulnerability found at vulnerable url with payload {ans[1]}'})
             except:
@@ -152,20 +138,18 @@ def run_xss(url,full_scan):
     except :
         return []
     
-def run_both_attack(url,full_scan):
-    return (run_xss(url,full_scan),run_link_attack(url,full_scan))
+def run_both_attack(url,full_scan,payloads):
+    return (run_xss(url,full_scan,payloads),run_link_attack(url,full_scan,payloads))
 
 def xss(url,full_scan):
     try:
         res = requests.get(url, timeout=10)
+        payloads=generate_payload() + [generate_script()]
         resp=[]
         if res.status_code == 200:
             all_links=get_all_links(url)
-            set_max_worker = 50
-            if  full_scan:
-                set_max_worker=12
-            with ThreadPoolExecutor(max_workers=set_max_worker) as executor:
-                futures = [executor.submit(run_both_attack, link,full_scan) for link in all_links]            
+            with ThreadPoolExecutor(max_workers=50) as executor:
+                futures = [executor.submit(run_both_attack, link,full_scan,payloads) for link in all_links]            
                 for future in concurrent.futures.as_completed(futures):                    
                     ans = future.result()
                     if ans and ans[0]:
