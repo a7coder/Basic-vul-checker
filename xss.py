@@ -162,7 +162,7 @@ def xss(url,full_scan):
 
 if __name__ == '__main__':
     t=time.time()
-    a=xss('http://testphp.vulnweb.com',True)
+    a=xss('http://testphp.vulnweb.com',False)
     print('Ans is ',)
     print(a)
     print('Length ',len(a))
